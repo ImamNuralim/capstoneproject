@@ -1,4 +1,5 @@
 @extends('layouts/main')
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <div class="hero-container pt-5">
   <div class="hero pt-5"></div>
   <div class="hero-text">
@@ -56,6 +57,7 @@
           <h2 class="mb-4 fw-bold">Misi</h2>
             <ul style="text-align: justify;">
             <li>Mengelola Sumberdaya Hutan Secara Lestari</li>
+            <li> <i class="fas fa-home">home</i> </li>
             <li>Peduli Kepada Kepentingan Masyarakat dan Lingkungan</li>
             <li>Mengoptimalkan Bisnis Kehutanan dengan Prinsip Good Corporate Governance</li>
             </ul>
@@ -203,21 +205,5 @@
     }
   </style>
 </section>
-
-<!-- <section style="background-color: #006342;" class="section-tata-nilai py-5">
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <h3 class=" mb-4 fw-bold text-center text-light"> Tata Nilai Akhlak </h3>
-    </div>
-    <div class="row justify-content-md-center pt-3">
-      <img src="/img/akhlak.png" style="max-width: 80%;">
-      
-      <div class="wp-block-image">
-      <figure class="aligncenter size-full"><img decoding="async" class="alignnone wp-image-220967 size-full" src="https://www.perhutani.co.id/wp-content/uploads/2022/10/akhlak-2.png" alt="" width="767" height="229" srcset="https://www.perhutani.co.id/wp-content/uploads/2022/10/akhlak-2.png 767w, https://www.perhutani.co.id/wp-content/uploads/2022/10/akhlak-2-300x90.png 300w" sizes="(max-width: 767px) 100vw, 767px" /></figure>
-      </div>
-      
-    </div>
-  </div>
-</section> 
 
 

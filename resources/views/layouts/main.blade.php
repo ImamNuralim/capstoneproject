@@ -23,7 +23,7 @@
       
       {{-- Title --}}
       <title>Perhutani KPH Kendal</title>
-      <link rel="icon" href="/img/logoperhutani.png" type="image/x-icon">
+      <link rel="icon" href="/img/logoTSII.png" type="image/x-icon">
     </head>
     <body class="d-flex flex-column min-vh-100 gradient2">
       @include('partials.navbar')
