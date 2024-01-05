@@ -23,3 +23,6 @@ Route::get('/', function(){
         'active' => 'homepage'
     ]);
 });
+
+
+Route::get('/login', [LoginController::class, 'login'])->name('login');
