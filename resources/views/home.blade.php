@@ -1,5 +1,5 @@
 @extends('layouts/main')
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+{{-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <div class="hero-container pt-5">
   <div class="hero pt-5"></div>
   <div class="hero-text">
@@ -51,7 +51,7 @@
         <div class="info">
           <h2 class="mb-4 fw-bold" >Visi</h2>
             <h5 class="fw-bold mb-4" style="text-align: justify;">Menjadi Perusahaan Pengelola Hutan Berkelanjutan dan Bermanfaat Bagi Masyarakat</h5>
-            <div class="desc" style="text-align: justify;">PERHUTANI mendedikasikan diri bagi Indonesia dengan kemampuan maksimal, 
+            <div class="desc" style="text-align: justify;">PERHUTANI mendedikasikan diri bagi Indonesia dengan kemampuan maksimal,
               bersinergi dengan semua pihak, mengikuti perkembangan dunia, demi memegang teguh kepercayaan yang diberikan.</div>
         <div class="mt-4">
           <h2 class="mb-4 fw-bold">Misi</h2>
@@ -101,13 +101,13 @@
           }
 
           @keyframes fade {
-            from {opacity: .5} 
+            from {opacity: .5}
             to {opacity: 1}
           }
 
-          
+
           </style>
-          
+
           <body>
 
           <div class="slideshow-container">
@@ -128,9 +128,9 @@
           <br>
 
           <div style="text-align:center">
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span> 
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
           </div>
 
           <script>
@@ -142,19 +142,19 @@
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
             for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";  
+              slides[i].style.display = "none";
             }
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
+            if (slideIndex > slides.length) {slideIndex = 1}
             for (i = 0; i < dots.length; i++) {
               dots[i].className = dots[i].className.replace(" activee", "");
             }
-            slides[slideIndex-1].style.display = "block";  
+            slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " activee";
             setTimeout(showSlides, 5000); // Change image every 5 seconds
           }
           </script>
-      </div>								
+      </div>
     </div>
     <!--<div class="row pt-5">
       <div class="row pb-3 border-dark col-lg-6">
@@ -194,7 +194,7 @@
     background-color: #006342;
     background-blend-mode: multiply;
     opacity: 0.8;
-    
+
     }
     .bgimage h3 {
       color:white;
@@ -204,6 +204,6 @@
       font-weight: 600;
     }
   </style>
-</section>
+</section> --}}
 
 

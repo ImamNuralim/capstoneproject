@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - Aplikasi Nilai Santri</title>
+    <title>Login</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+
 </head>
 <body>
     <div class="container"><br>
         <div class="col-md-4 col-md-offset-4">
-            <h2 class="text-center"><b>ANISA</b><br>Aplikasi Nilai Santri</h3>
+            <img src="/img/logoTSII.png" alt="" class="centered-image">
+            <h2 class="text-center"><b></b><br>Join Yuk..</h3>
             <hr>
             @if(session('error'))
             <div class="alert alert-danger">
                 <b>Opps!</b> {{session('error')}}
             </div>
             @endif
-            <form action="{{ route('actionlogin') }}" method="post">
+            <form action="{{ route('login') }}" method="post">
             @csrf
                 <div class="form-group">
                     <label>Email</label>
