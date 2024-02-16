@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
 
 </head>
@@ -14,7 +14,6 @@
     <div class="container"><br>
         <div class="col-md-4 col-md-offset-4">
             <img src="/img/logoTSII.png" alt="" class="centered-image">
-            <h2 class="text-center"><b></b><br>Join Yuk..</h3>
             <hr>
             @if(session('error'))
             <div class="alert alert-danger">

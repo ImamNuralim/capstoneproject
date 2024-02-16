@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Menambahkan foreign key constraint
-            $table->foreign('id_kategori')->references('id_kategori')->on('2024_01_01_171535_create_kategori_table');
+            $table->foreign('id_kategori')->references('id_kategori')->on('kategori');
             // Gantilah 'nama_tabel_kategori' dengan nama tabel kategori yang sesuai dalam basis data Anda
         });
     }
