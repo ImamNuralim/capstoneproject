@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\JawabanController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\MateriVideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,17 +21,19 @@ use App\Http\Controllers\Auth\RegisterController;
 //     return view('welcome');
 // });
 
-Route::get('/', function(){
-    return view('home',[
-        'title' => 'Homepage',
-        'active' => 'homepage'
-    ]);
-});
+Route::get('/', function(){ return view('home',[ 'title' => 'Homepage', 'active' => 'homepage']);});
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', function () { return view('home');})->name('home');
 
 Route::get('/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register');
+
+Route::get('/jawaban', [JawabanController::class, 'index'])->name('jawaban.index');
+
+
+
+Route::get('/materivideo', [MateriVideoController::class, 'index'])->name('materivideo.index');
+
+
+
