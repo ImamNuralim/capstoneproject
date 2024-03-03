@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet"
-        href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css') }}">">
+        href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css') }}">
 </head>
 
 <body>
@@ -28,32 +28,17 @@
                             <div class="btn-list me-2">
                                 <a href="{{ route('home') }}"
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('home') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home"
-                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
                                         <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
                                         <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
                                     </svg>
-                                    {{-- Home --}}
                                 </a>
                                 <a href="{{ route('materivideo.index') }}"
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('materivideo') ? 'active' : '' }}">
-                                    {{-- <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-video icon-tabler-list"
-                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M9 6l11 0"></path>
-                                        <path d="M9 12l11 0"></path>
-                                        <path d="M9 18l11 0"></path>
-                                        <path d="M5 6l0 .01"></path>
-                                        <path d="M5 12l0 .01"></path>
-                                        <path d="M5 18l0 .01"></path>
-                                    </svg> --}}
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                        viewBox="0 0 24 24">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <g fill="none" stroke="currentColor" stroke-linecap="round"
                                             stroke-linejoin="round" stroke-width="2">
                                             <path d="M9 15H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3" />
@@ -63,16 +48,13 @@
                                     </svg>
                                     {{-- Following --}}
                                 </a>
-                                <a href="{{ route('jawaban.index') }}" wire:navigate
+                                <a href="#" wire:navigate
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('answer.index') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit"
-                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
-                                        <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z">
-                                        </path>
-                                        <path d="M16 5l3 3"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"
+                                            d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6v13m9-13v13m9-13v13" />
                                     </svg>
                                     {{-- Answer --}}
                                 </a>
@@ -120,7 +102,7 @@
                                         </path>
                                         <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
                                     </svg>
-                                    Sign in
+                                    Log in
                                 </a>
                                 <a wire:navigate href="{{ route('register') }}" wire:navigate
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('register') ? 'active' : '' }}">

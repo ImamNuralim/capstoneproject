@@ -27,13 +27,13 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/home', function () { return view('home');})->name('home');
 
 Route::get('/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register');
 
-Route::get('/jawaban', [JawabanController::class, 'index'])->name('jawaban.index');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
 
 
 Route::get('/materivideo', [MateriVideoController::class, 'index'])->name('materivideo.index');
 
 
-
+Route::get('/quran', [QuranController::class, 'index']);
