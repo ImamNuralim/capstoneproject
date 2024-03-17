@@ -9,12 +9,12 @@ class MateriVideoController extends Controller
 {
     public function index()
     {
-        return view('materivideo.index');
+        return view('user.materivideo.index');
     }
 
     public function create()
     {
-        return view('materivideo.create');
+        return view('user.materivideo.create');
     }
 
     public function store (Request $request)
@@ -31,7 +31,7 @@ class MateriVideoController extends Controller
 
     public function edit(Materi_video $materi_video )
     {
-        return view('materivideo.edit',[
+        return view('user.materivideo.edit',[
             'materi_video' => $materi_video
         ]);
     }

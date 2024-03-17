@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content=".">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $title ?? 'Luora' }}</title>
+    <title>{{ $title ?? 'TIC Platform' }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet"
@@ -26,7 +26,7 @@
                     @guest
                         <div class="nav-item d-none d-md-flex me-2">
                             <div class="btn-list me-2">
-                                <a href="{{ route('home') }}"
+                                <a href="{{ --route('home') --}}"
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('home') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -36,8 +36,19 @@
                                         <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
                                     </svg>
                                 </a>
+
+                                <a href="{{ route('hadith') }}" wire:navigate
+                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('hadith') ? 'active' : '' }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"
+                                            d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6v13m9-13v13m9-13v13" />
+                                    </svg>
+                                    {{-- quran --}}
+                                </a>
                                 <a href="{{ route('materivideo.index') }}"
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('materivideo') ? 'active' : '' }}">
+                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('materivideo.index') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <g fill="none" stroke="currentColor" stroke-linecap="round"
                                             stroke-linejoin="round" stroke-width="2">
@@ -46,17 +57,7 @@
                                             <path d="M14 13.5v3l2.5-1.5zM7 6v.01" />
                                         </g>
                                     </svg>
-                                    {{-- Following --}}
-                                </a>
-                                <a href="#" wire:navigate
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('answer.index') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24">
-                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2"
-                                            d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6v13m9-13v13m9-13v13" />
-                                    </svg>
-                                    {{-- Answer --}}
+                                    {{-- materivideo --}}
                                 </a>
                                 <a href="#"
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
@@ -120,12 +121,6 @@
                                 </a>
                             </div>
                         </div>
-
-                        @yield('dashboard')
-                        @yield('home')
-                        @yield('materivideo')
-
-
                     @endguest
                 </div>
             </div>
@@ -133,8 +128,10 @@
 
         <div class="page-wrapper">
             <div class="container">
-                {{ $slot ?? null }}
-                @yield('main')
+                @yield('dashboard')
+                @yield('home')
+                @yield('materivideo')
+                @yield('kitab')
             </div>
         </div>
     </div>
@@ -161,6 +158,8 @@
             }
         }
     </script>
+
+
 </body>
 
 </html>

@@ -1,6 +1,5 @@
-@extends('layouts/main')
-@extends('posts/index')
-
+@extends('partials.navbar')
+@section('home')
 <div>
     <div class="mt-3">
         <div class="row">
@@ -141,3 +140,4 @@
         </div>
     </div>
 </div>
+@stop
