@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
-
+namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -10,10 +9,20 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     /**
-     * Handle a registration request for the application.
+     * Menampilkan form pendaftaran.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
+
+    /**
+     * Menangani permintaan pendaftaran pengguna baru.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function register(Request $request)
     {
@@ -34,6 +43,6 @@ class RegisterController extends Controller
         // Sesuaikan sesuai kebutuhan aplikasi Anda, misalnya, mengirim email verifikasi, logika autentikasi, dll.
 
         // Mengembalikan respons yang sesuai, misalnya, mengarahkan pengguna ke halaman beranda atau halaman login
-        return redirect('/home');
+        return redirect()->route('home');
     }
 }

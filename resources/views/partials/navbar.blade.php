@@ -26,7 +26,7 @@
                     @guest
                         <div class="nav-item d-none d-md-flex me-2">
                             <div class="btn-list me-2">
-                                <a href="{{ --route('home') --}}"
+                                <a href="{{route('home')}}"
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('home') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

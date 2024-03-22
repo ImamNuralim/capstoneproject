@@ -66,4 +66,4 @@ Route::any('/videos/update/{id}','VideoController@update')->name('video.update')
 
 
 //dashboard admin
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.dashboard');

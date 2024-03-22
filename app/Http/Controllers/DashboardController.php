@@ -9,7 +9,7 @@ class DashboardController extends Controller
     public function index()
     {
         // Logika untuk menampilkan halaman dashboard
-        return view('dashboard.index');
+        return view('dashboard.dashboard');
     }
 
     public function show($id)
