@@ -12,7 +12,54 @@
     <link rel="stylesheet"
         href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css') }}">
 </head>
+<header class="app-header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item d-block d-xl-none">
+                <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                    <i class="ti ti-menu-2"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                    <i class="ti ti-bell-ringing"></i>
+                    <div class="notification bg-primary rounded-circle"></div>
+                </a>
+            </li>
+        </ul>
+        <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../assets/images/profile/user-1.jpg" alt="" width="35"
+                            height="35" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                        aria-labelledby="drop2">
+                        <div class="message-body">
+                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                <i class="ti ti-user fs-6"></i>
+                                <p class="mb-0 fs-3">My Profile</p>
+                            </a>
+                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                <i class="ti ti-mail fs-6"></i>
+                                <p class="mb-0 fs-3">My Account</p>
+                            </a>
+                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                <i class="ti ti-list-check fs-6"></i>
+                                <p class="mb-0 fs-3">My Task</p>
+                            </a>
+                            <a href="./authentication-login.html"
+                                class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 <body>
     <div class="page">
         <header class="navbar navbar-expand-md navbar-light d-print-none">
@@ -26,9 +73,10 @@
                     @guest
                         <div class="nav-item d-none d-md-flex me-2">
                             <div class="btn-list me-2">
-                                <a href="{{route('home')}}"
+                                <a href="{{ route('home') }}"
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('home') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home"
+                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
@@ -37,8 +85,8 @@
                                     </svg>
                                 </a>
 
-                                <a href="{{ route('hadith') }}" wire:navigate
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('hadith') ? 'active' : '' }}">
+                                <a href="{{ route('kitab.index') }}" wire:navigate
+                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('index') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24">
                                         <path fill="none" stroke="currentColor" stroke-linecap="round"
@@ -49,11 +97,13 @@
                                 </a>
                                 <a href="{{ route('materivideo.index') }}"
                                     class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('materivideo.index') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24">
                                         <g fill="none" stroke="currentColor" stroke-linecap="round"
                                             stroke-linejoin="round" stroke-width="2">
                                             <path d="M9 15H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3" />
-                                            <path d="M9 12a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3zm-6 0l2.296-2.296a2.41 2.41 0 0 1 3.408 0L9 10" />
+                                            <path
+                                                d="M9 12a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3zm-6 0l2.296-2.296a2.41 2.41 0 0 1 3.408 0L9 10" />
                                             <path d="M14 13.5v3l2.5-1.5zM7 6v.01" />
                                         </g>
                                     </svg>
@@ -132,6 +182,9 @@
                 @yield('home')
                 @yield('materivideo')
                 @yield('kitab')
+                @yield('hadith')
+                @yield('surah')
+                @yield('detail')
             </div>
         </div>
     </div>
@@ -158,8 +211,6 @@
             }
         }
     </script>
-
-
 </body>
 
 </html>

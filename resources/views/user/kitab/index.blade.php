@@ -2,21 +2,24 @@
 @section('kitab')
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> --}}
         <title>Hadith Data</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
     </head>
-
+    <style>
+        .card{
+            background-color: rgb(185, 195, 206);
+        }
+    </style>
     <body>
-        <style>
+      <style>
             .header-hadits {
                 padding-top: 10px;
                 text-align: center;
@@ -24,7 +27,6 @@
                 color: #0255A1;
                 font-size: 30px;
             }
-
             .pill {
                 justify-items: center;
                 height: 100px;
@@ -39,9 +41,6 @@
                 border-top-right-radius: 50px;
                 border-bottom-right-radius: 50px;
             }
-
-
-
             .container-1 {
                 display: flex;
                 justify-content: center;
@@ -50,9 +49,6 @@
                 flex-wrap: wrap;
                 /* Mengizinkan pembungkus konten */
             }
-
-
-
             .button {
                 display: inline-block;
                 opacity: 70%;
@@ -62,20 +58,14 @@
                 border-radius: 20px;
                 text-decoration: none;
             }
-
             .button:hover {
                 background-color: #0065c4;
             }
-
-
         </style>
-
-
         {{-- untuk background --}}
-
-        <div class="container mt-4">
-            <div class="card">
-                <div class="card">
+       <div class="container mt-4">
+            <div class="card-sholat">
+                <div class="card-sholat">
                     <h4 class="text-center">Jadwal Sholat</h4>
                 </div>
                 <div class="card-body">
@@ -117,35 +107,28 @@
             </div>
         </div>
 
-        {{-- card buttonm kitab --}}
-
-
-
-        @if (isset($hadithData))
-            <h>Hadith Data</h>
-            <div class="card-body">
-                <table border="1">
-                    <thead>
-                        <tr>
-                            <th>Number</th>
-                            <th>Arabic Text</th>
-                            <th>ID</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($hadithData['data']['hadiths'] as $hadith)
-                            <tr>
-                                <td>{{ $hadith['number'] }}</td>
-                                <td>{{ $hadith['arab'] }}</td>
-                                <td>{{ $hadith['id'] }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+        <div class="row mt-4">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">AL-Quran</h5>
+                  <p class="card-text">Baca Alquran Disini.</p>
+                  <a href="{{ route('kitab.surah') }}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
             </div>
-        @else
-            <p>{{ $error ?? 'No data available' }}</p>
-        @endif
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Hadits</h5>
+                  <p class="card-text">Pelajari Hadits Disini.</p>
+                  <a href="{{ route('hadith') }}" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        {{-- card buttonm kitab --}}
 
 
 
@@ -156,9 +139,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
             integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
         </script>
-        <script src="js/script.js"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
     </body>
-
 
     </html>
 
