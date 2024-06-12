@@ -8,6 +8,53 @@
   <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
+<header class="navbar navbar-expand-md navbar-light d-print-none">
+    <div class="container-xl">
+        <h1 class="navbar-brand text-info navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <a href="{{ route('home') }}">
+                Teras Ilmu Center
+            </a>
+        </h1>
+        <div class="navbar-nav flex-row order-md-last">
+            @guest
+                <div class="nav-item d-none d-md-flex me-3">
+                    <div class="btn-list">
+                        <a wire:navigate href="{{ route('login') }}" wire:navigate
+                            class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('login') ? 'active' : '' }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path
+                                    d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2">
+                                </path>
+                                <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
+                            </svg>
+                            Log in
+                        </a>
+                        <a wire:navigate href="{{ route('register') }}" wire:navigate
+                            class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('register') ? 'active' : '' }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
+                                <path d="M16 19h6"></path>
+                                <path d="M19 16v6"></path>
+                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
+                            </svg>
+                            Sign up
+                        </a>
+                    </div>
+                </div>
+
+
+            @endguest
+        </div>
+    </div>
+</header>
 
 <body>
   <!--  Body Wrapper -->

@@ -1,0 +1,16 @@
+
+
+    @media (min-width: 320px) and (max-width: 767px) {
+        .btn-pill{
+            font-size: 25px;
+        }
+        .card-body{
+            font-size: 10px;
+        }
+        .mt-3{
+            font-size: 15px;
+        }
+
+    }
+
+

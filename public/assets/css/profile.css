@@ -1,0 +1,30 @@
+
+@media (min-width: 320px) and (max-width: 768px){
+    .avatar{
+        height: 32px;
+        width: 32px;
+    }
+    .edit{
+        font-size: 13px;
+    }
+
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .avatar{
+        height: 2rem;
+        width: 2rem;
+    }
+    .container{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .username{
+        font-size: 6px;
+    }
+    .col-12{
+        font-style: bold;
+        font-size: 20px;
+    }
+}

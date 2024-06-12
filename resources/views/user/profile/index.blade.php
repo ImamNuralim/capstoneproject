@@ -1,3 +1,6 @@
+@extends('partial.navbar')
+
+@section('profile')
 <div>
     <div class="mt-4">
         <div class="row">
@@ -386,3 +389,4 @@
     </div>
     @endif
 </div>
+@endsection

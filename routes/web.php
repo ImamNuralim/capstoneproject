@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JawabanController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MateriVideoController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KitabController;
 use App\Http\Controllers\QuranController;
 use App\Http\Controllers\UstazController;
+
 
 
 
@@ -68,3 +70,8 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::get('/dashboard/ustaz', [UstazController::class, 'index'])->name('dashboard.ustaz');
 
+//profil
+Route::get('/profile', [ProfileController::class, 'index'])->name('userprofile.index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [JawabanController::class, 'index'])->name('home');

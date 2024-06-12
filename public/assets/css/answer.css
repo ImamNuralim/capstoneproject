@@ -1,0 +1,41 @@
+.col-11{
+    font-size: 12px"
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.feather-loader {
+    animation: spin 1s linear infinite;
+}
+.ussername{
+    text-decoration: none
+}
+.no-underline {
+    text-decoration: none;
+}
+.no-underline:hover {
+    text-decoration: none;
+}
+.credential {
+    text-decoration: none !important;
+    font-size: 13px !important;
+}
+
+
+@media (max-width: 575px) {
+    .userrname{
+        font-size: 12px;
+    }
+    .text-secondary{
+        font-size: 10px;
+    }
+    .row{
+        display: flex;
+    flex-wrap: wrap;
+    }
+}

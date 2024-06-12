@@ -1,0 +1,47 @@
+.navbar{
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.142), 0 2px 4px -1px rgba(0, 0, 0, 0.153);
+
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+
+}
+
+
+/*tablet*/
+@media (min-width: 600px) and (max-width: 768px) {
+
+    .navbar-brand {
+        flex: 1;
+        font-size: 13px;
+    }
+    .navbar-nav {
+        display: flex;
+        justify-content: flex-end;
+
+    }
+    .btn-pill{
+        width: 10px;
+        height: 35px; ;
+    }
+}
+
+@media (min-width:769px) and (max-width:1024px){
+    .btn-pill{
+        width: 14px;
+        height: 35px; ;
+    }
+}
+
+@media(min-width:1025px){
+    .btn-pill{
+        width: 25px;
+        height: 35px; ;
+    }
+}

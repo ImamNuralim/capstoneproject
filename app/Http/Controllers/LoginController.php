@@ -1,36 +1,50 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
-    public function index (){
-        return view('auth.login', [
-            'title' => 'Login'
-        ]);
+    public function index()
+    {
+        return view('login');
     }
 
-    public function authenticate(Request $request){
-        $credentials = $request->validate([
-            'email' => ['required','email:dns'],
-            'password' => ['required']
+    public function authenticate(Request $request)
+    {
+        $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ], [
+            'username.required' => '*Username wajib diisi',
+            'password.required' => '*Password wajib diisi',
         ]);
 
-        if (Auth::attempt($credentials)){
-            $request->session()->regenerate();
+        $username = $request->username;
+        $password = $request->password;
 
-            return redirect()->intended('/dashboard');
+        // Cek otentikasi untuk setiap jenis pengguna
+        $user = Auth::attempt(['username' => $username, 'password' => $password]);
+
+        // Cek hasil otentikasi
+        if ($user) {
+            if (Auth::user()->role == 'admin') {
+                return redirect()->route('home.dashboard');
+            } elseif (Auth::user()->role == 'ustaz') {
+                return redirect()->route('home');
+            } elseif (Auth::user()->role == 'murid') {
+                return redirect()->route('home');
+            }
+        } else {
+            return redirect('/login')->withErrors(['login' => '*Username dan password yang dimasukkan tidak sesuai'])->withInput();
         }
-        return back()->with('loginError','Email atau Password Salah!');
     }
 
-    public function logout(Request $request){
+    public function logout()
+    {
         Auth::logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('');
     }
 }

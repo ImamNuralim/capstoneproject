@@ -16,7 +16,7 @@ class DummyUsersSeeder extends Seeder
         $userData = [
             //data ustaz
             [
-                'username' => 'elgato12',
+                'username' => 'elgatoo',
                 'name' => 'elgato',
                 'email' => 'elgato@gmail.com',
                 'password' => bcrypt('ustaz'),
@@ -63,6 +63,7 @@ class DummyUsersSeeder extends Seeder
             //data murid
             [
                 'username' => 'imamnuralim',
+                'description' => 'Halo saya murid Kelas 5',
                 'name' => 'Lil Gustavo',
                 'email' => 'lilgustav@gmail.com',
                 'password' => bcrypt('murid'),
@@ -71,6 +72,7 @@ class DummyUsersSeeder extends Seeder
             ],
             [
                 'username' => 'laravel',
+                'description' => 'Halo saya murid Kelas 5',
                 'name' => 'Laravel Php',
                 'email' => 'laravel@gmail.com',
                 'password' => bcrypt('murid'),
@@ -78,15 +80,17 @@ class DummyUsersSeeder extends Seeder
                 'role' => 'murid'
             ],
             [
-                'username' => 'expotekkom',
-                'name' => 'expo tekkom',
-                'email' => 'expo@gmail.com',
+                'username' => 'expotekkoms',
+                'description' => 'Halo saya murid Kelas 5',
+                'name' => 'expo tekkoms',
+                'email' => 'expo@gmails.com',
                 'password' => bcrypt('murid'),
                 'telp'=>'081337010104',
                 'role' => 'murid'
             ],
             [
                 'username' => 'kantindekanat',
+                'description' => 'Halo saya murid Kelas 5',
                 'name' => 'kantin dekanat',
                 'email' => 'kantin@gmail.com',
                 'password' => bcrypt('murid'),
@@ -95,6 +99,7 @@ class DummyUsersSeeder extends Seeder
             ],
             [
                 'username' => 'expotekkom',
+                'description' => 'Halo saya murid Kelas 5',
                 'name' => 'expo tekkom',
                 'email' => 'expo@gmail.com',
                 'password' => bcrypt('murid'),
@@ -103,44 +108,46 @@ class DummyUsersSeeder extends Seeder
             ],
             //data admin
             [
-                'username' => 'admin1TIC',
+                'username' => 'adminTTIC',
+                'no_admin' => 'superadmin',
+                'email' => 'superadmin@gmail.com',
                 'name' => 'admin',
-                'email' => 'admin1@gmail.com',
-                'password' => bcrypt('admin1'),
-                'telp'=>'081337010104',
+                'password' => bcrypt('admin'),
                 'role' => 'admin'
             ],
             [
-                'username' => 'admin2TIC',
-                'name' => 'admin2',
-                'email' => 'admin2@gmail.com',
-                'password' => bcrypt('admin2'),
-                'telp'=>'081337010104',
+                'username' => 'adminTIC',
+                'no_admin' => 'admin',
+                'email' => 'admin@gmail.com',
+                'name' => 'admin akbar',
+                'password' => bcrypt('admin'),
                 'role' => 'admin'
-            ],
+            ]
             //data user umum
-            [
-                'username' => 'userumum1',
-                'name' => 'user umum1',
-                'email' => 'umum1@gmail.com',
-                'password' => bcrypt('userumum'),
-                'telp'=>'081337010101',
-                'role' => 'user umum'
-            ],
-            [
-                'username' => 'userumum2',
-                'name' => 'user umum2',
-                'email' => 'umum2@gmail.com',
-                'password' => bcrypt('userumum'),
-                'telp'=>'081337010102',
-                'role' => 'user umum'
-            ],
-                'username' => 'userumum3',
-                'name' => 'user umum3',
-                'email' => 'umum3@gmail.com',
-                'password' => bcrypt('userumum'),
-                'telp'=>'081337010103',
-                'role' => 'user umum'
+        //     [
+        //         'username' => 'userumum1',
+        //         'name' => 'user umum1',
+        //         'email' => 'umum1@gmail.com',
+        //         'password' => bcrypt('userumum'),
+        //         'telp'=>'081337010101',
+        //         'role' => 'user umum'
+        //     ],
+        //     [
+        //         'username' => 'userumum',
+        //         'name' => 'user umum2',
+        //         'email' => 'umum2@gmail.com',
+        //         'password' => bcrypt('userumum'),
+        //         'telp'=>'081337010102',
+        //         'role' => 'user umum'
+        //     ],
+        //     [
+        //         'username' => 'userumum3',
+        //         'name' => 'user umum3',
+        //         'email' => 'umum3@gmail.com',
+        //         'password' => bcrypt('userumum'),
+        //         'telp'=>'081337010103',
+        //         'role' => 'user umum'
+        // ]
         ];
         foreach ($userData as $key => $val) {
             User::create($val);

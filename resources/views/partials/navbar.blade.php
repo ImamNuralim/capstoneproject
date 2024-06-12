@@ -9,72 +9,27 @@
     <title>{{ $title ?? 'TIC Platform' }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet"
-        href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css') }}">
+    <link
+        rel="stylesheet"href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css') }}">
+    <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/navbar.css">
 </head>
-<header class="app-header">
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <ul class="navbar-nav">
-            <li class="nav-item d-block d-xl-none">
-                <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
-                    <i class="ti ti-menu-2"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link nav-icon-hover" href="javascript:void(0)">
-                    <i class="ti ti-bell-ringing"></i>
-                    <div class="notification bg-primary rounded-circle"></div>
-                </a>
-            </li>
-        </ul>
-        <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="../assets/images/profile/user-1.jpg" alt="" width="35"
-                            height="35" class="rounded-circle">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
-                        aria-labelledby="drop2">
-                        <div class="message-body">
-                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                <i class="ti ti-user fs-6"></i>
-                                <p class="mb-0 fs-3">My Profile</p>
-                            </a>
-                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                <i class="ti ti-mail fs-6"></i>
-                                <p class="mb-0 fs-3">My Account</p>
-                            </a>
-                            <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
-                                <i class="ti ti-list-check fs-6"></i>
-                                <p class="mb-0 fs-3">My Task</p>
-                            </a>
-                            <a href="./authentication-login.html"
-                                class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
 <body>
     <div class="page">
         <header class="navbar navbar-expand-md navbar-light d-print-none">
-            <div class="container-xl">
-                <h1 class="navbar-brand text-danger navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <div class="container">
+                <h1 class="navbar-brand text-info navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                     <a href="{{ route('home') }}">
                         Teras Ilmu Center
                     </a>
                 </h1>
                 <div class="navbar-nav flex-row order-md-last">
                     @guest
-                        <div class="nav-item d-none d-md-flex me-2">
-                            <div class="btn-list me-2">
+                        <div class="nav-item  me-2">
+                            <div class="btn-list">
                                 <a href="{{ route('home') }}"
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('home') ? 'active' : '' }}">
+                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('home') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -86,46 +41,32 @@
                                 </a>
 
                                 <a href="{{ route('kitab.index') }}" wire:navigate
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('index') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24">
-                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2"
-                                            d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0M3 6v13m9-13v13m9-13v13" />
-                                    </svg>
+                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('index') ? 'active' : '' }}">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>
                                     {{-- quran --}}
                                 </a>
                                 <a href="{{ route('materivideo.index') }}"
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('materivideo.index') ? 'active' : '' }}">
+                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('materivideo.index') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        viewBox="0 0 24 24">
-                                        <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                            stroke-linejoin="round" stroke-width="2">
-                                            <path d="M9 15H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3" />
-                                            <path
-                                                d="M9 12a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-6a3 3 0 0 1-3-3zm-6 0l2.296-2.296a2.41 2.41 0 0 1 3.408 0L9 10" />
-                                            <path d="M14 13.5v3l2.5-1.5zM7 6v.01" />
-                                        </g>
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-movie">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path
+                                            d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+                                        <path d="M8 4l0 16" />
+                                        <path d="M16 4l0 16" />
+                                        <path d="M4 8l4 0" />
+                                        <path d="M4 16l4 0" />
+                                        <path d="M4 12l16 0" />
+                                        <path d="M16 8l4 0" />
+                                        <path d="M16 16l4 0" />
                                     </svg>
                                     {{-- materivideo --}}
                                 </a>
-                                <a href="#"
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-users-group"
-                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                        <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1"></path>
-                                        <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                        <path d="M17 10h2a2 2 0 0 1 2 2v1"></path>
-                                        <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-                                        <path d="M3 13v-1a2 2 0 0 1 2 -2h2"></path>
-                                    </svg>
-                                    {{-- Spaces --}}
                                 </a>
                                 <a href="#"
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
+                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -137,12 +78,16 @@
                                     </svg>
                                     {{-- Notifications --}}
                                 </a>
+                                <a href="#"
+                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
+                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
+                                </a>
                             </div>
                         </div>
-                        <div class="nav-item d-none d-md-flex me-3">
+                        <div class="nav-item d-md-flex me-3">
                             <div class="btn-list">
                                 <a wire:navigate href="{{ route('login') }}" wire:navigate
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('login') ? 'active' : '' }}">
+                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('login') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round"
@@ -153,24 +98,27 @@
                                         </path>
                                         <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
                                     </svg>
-                                    Log in
+                                    Masuk
                                 </a>
-                                <a wire:navigate href="{{ route('register') }}" wire:navigate
-                                    class="btn btn-outline-danger border-danger btn-pill {{ request()->route()->named('register') ? 'active' : '' }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus"
-                                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                                        <path d="M16 19h6"></path>
-                                        <path d="M19 16v6"></path>
-                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
+                                <a wire:navigate href="{{ route('login') }}" wire:navigate
+                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('login') ? 'active' : '' }}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-user-plus">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                                        <path d="M16 19h6" />
+                                        <path d="M19 16v6" />
+                                        <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
                                     </svg>
-                                    Sign up
+                                    Masuk
                                 </a>
+
                             </div>
                         </div>
+
+
                     @endguest
                 </div>
             </div>
