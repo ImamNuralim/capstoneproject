@@ -17,6 +17,7 @@
 
 <body>
     <div class="page">
+
         <header class="navbar navbar-expand-md navbar-light d-print-none">
             <div class="container">
                 <h1 class="navbar-brand text-info navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
@@ -26,10 +27,10 @@
                 </h1>
                 <div class="navbar-nav flex-row order-md-last">
                     @guest
-                        <div class="nav-item  me-2">
-                            <div class="btn-list">
+                        <div class="nav-item  me-2" style="display: flex; justify-content: center;">
+                            <div class="btn-items" >
                                 <a href="{{ route('home') }}"
-                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('home') ? 'active' : '' }}">
+                                    class="btn-item btn btn-outline-info border-info  {{ request()->route()->named('home') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -41,12 +42,12 @@
                                 </a>
 
                                 <a href="{{ route('kitab.index') }}" wire:navigate
-                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('index') ? 'active' : '' }}">
+                                    class="btn-item btn btn-outline-info border-info {{ request()->route()->named('index') ? 'active' : '' }}">
                                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>
-                                    {{-- quran --}}
+
                                 </a>
                                 <a href="{{ route('materivideo.index') }}"
-                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('materivideo.index') ? 'active' : '' }}">
+                                    class=" btn-item btn btn-outline-info border-info {{ request()->route()->named('materivideo.index') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round"
@@ -62,11 +63,10 @@
                                         <path d="M16 8l4 0" />
                                         <path d="M16 16l4 0" />
                                     </svg>
-                                    {{-- materivideo --}}
-                                </a>
+
                                 </a>
                                 <a href="#"
-                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
+                                    class="btn-item btn btn-outline-info border-info {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -76,10 +76,10 @@
                                         </path>
                                         <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
                                     </svg>
-                                    {{-- Notifications --}}
+
                                 </a>
                                 <a href="#"
-                                    class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
+                                    class="btn-item btn btn-outline-info border-info {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
                                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
                                 </a>
                             </div>

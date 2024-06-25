@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Josefin+Sans:wght@200;300;400;500;600;700;800;900;1000&family=Mulish:wght@200;300;400;500;600;700;800;900;1000&family=Noto+Sans+Indic+Siyaq+Numbers&family=Outfit:wght@200;300;400;500;600;700;800;900;1000&family=Poppins&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Outfit', Sans-Serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+
+}
+.banner {
+  width: 100%;
+  height: min(100vh, 600px);
+  background-image: url('banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.img {
+  filter: drop-shadow(.2rem .2rem 3rem black);
+  width: min(100%, 278px);
+}
+.img_dua {
+  margin-top: 3rem;
+  filter: drop-shadow(.2rem .2rem 3rem black);
+  width: min(100%, 435px);
+}
+.container1 {
+  width: 100%;
+
+}
+
+.offcanvas-title {
+  font-size: 1.5rem;
+}
+.nav-link {
+  color: #eaeaea;
+  font-size: .9rem;
+}
+.active {
+  color: white;
+}
+.nav-link:active {
+  color: white;
+}
+.quran {
+  width: 100%;
+  max-height: 100vh;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.conten {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container2 {
+  width: min(100%, 900px);
+
+}
+.container5 {
+  width: min(100%, 900px);
+
+}
+.introduction-title {
+  color: rgba(160, 165, 180, 1);
+  font-family: 'Outfit', Sans-Serif;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.introduction {
+  color: rgba(130, 135, 150, 1);
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.judul {
+  font-size: 1.25rem;
+  color: 0695dd;
+  font-weight: 600;
+}
+.heading {
+  width: 100%;
+  display: flex;
+}
+.judul-list {
+  font-size: 1.6rem;
+  color: rgba(130, 135, 150, 1);
+  font-weight: 700;
+  border-bottom: 3px solid rgba(14, 14, 14, 0.696);
+  margin: 0 auto;
+}
+.list-surah {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  direction: rtl;
+}
+.grid-items {
+  background-color: rgba(166, 166, 166, 0.586);
+  border-radius: .8rem;
+  box-shadow: 0 0 1rem rgba(80, 80, 80, .2);
+  border: 1px solid rgba(120, 120, 120, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  outline: none;
+  border: none;
+}
+.nomor_surah {
+  color: rgba(14, 14, 14, 0.696);
+  font-size: 2rem;
+  margin-top: 1rem;
+  font-weight: 800;
+}
+.nama_surat {
+  color: rgba(160, 165, 180, 1);
+  font-size: 1.2rem;
+  margin-top: -1.2rem;
+}
+.nama_latin {
+  color: rgba(2, 2, 2, 0.759);
+  margin-top: -.9rem;
+  font-size: .8rem;
+}
+.jumlah_ayat {
+  color: rgba(130, 135, 150, 1);
+  margin-top: -.9rem;
+  font-size: .6rem;
+  margin-bottom: 1rem;
+}
+.modal {
+  width: 100%;
+  height: 100vh;
+}
+.modal-content {
+  background-color: rgba(20, 28, 40, 1);
+}
+.modal-header {
+  border: none;
+}
+.modal-footer {
+  border: none;
+}
+.bungkus {
+  width: min(100%, 900px);
+  background-color: rgba(20, 28, 40, 1);
+  padding: 2rem .8rem;
+}
+.arabic {
+  min-width: 10px;
+  max-width: 100%;
+  font-family: "Amiri", serif;
+  font-size: 2.2rem;
+  line-height: 6rem;
+  color: rgba(170, 175, 200, 1);
+  border-radius: .5rem;
+  padding: 1rem;
+  font-weight: 800;
+}
+.ayah {
+  position: relative;
+}
+.ayatny {
+  position: absolute;
+  z-index: 2;
+}
+.quran2 {
+  width: min(100%, 900px);
+  font-family: "Amiri", serif;
+  font-size: 2.2rem;
+  line-height: 6rem;
+  color: rgba(170, 175, 200, 1);
+  background-color: rgba(20, 28, 40, 1);
+  padding: 2rem;
+}
+.bismillah {
+  width: min(100%, 900px);
+  font-family: "Amiri", serif;
+  font-size: 2.2rem;
+  line-height: 3.1rem;
+  color: rgba(170, 175, 200, 1);
+  background-color: rgba(20, 28, 40, 1);
+  padding: 2rem;
+}
+.ayat {
+  color: rgba(0, 150, 110, 1);
+  text-shadow: 0 0 1rem rgba(0, 150, 110, .3);
+}
+.translate {
+  margin-top: 1.5rem;
+}
+.terjemah {
+  font-family: 'Lato', Sans-Serif;
+  font-size: 1.1rem;
+  color: rgba(2, 2, 2, 0.759);
+  font-weight: 800;
+}
+.terjemahan {
+  margin-top: .7rem;
+  color: rgba(170, 175, 200, 1);
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-family: 'Lato', Sans-Serif;
+}
+.footnotes {
+  margin-top: 1rem;
+}
+.catatan {
+  color: red;
+  font-family: 'Lato', Sans-Serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.catatanny {
+  color: rgba(140, 144, 160, 1);
+  font-size: .9rem;
+  margin-top: .7rem;
+  line-height: 1rem;
+  font-family: 'Lato', Sans-Serif;
+}
+.load {
+  color: rgba(140, 144, 160, 1);
+  font-size: 1.5rem;
+}
+.button {
+  background-color: rgba(14, 14, 14, 0.696);
+  color: rgba(20, 28, 40, 1);
+  width: 100%;
+  outline: none;
+  box-shadow: 0 0 1rem rgba(80, 80, 80, .2);
+}
+.button:active, .button:focus, .button:hover {
+  outline: none;
+  background-color: rgba(14, 14, 14, 0.696);
+  color: rgba(20, 28, 40, 1);
+  box-shadow: 0 0 1rem rgba(80, 80, 80, .2);
+}
+footer {
+  background-color: rgba(0, 28, 40, 1);
+  width: 100%;
+  color: rgba(160, 165, 180, 1);
+  border-top: 1px solid rgba(160, 165, 180, 1);
+}
+.form-label {
+  color: rgba(14, 14, 14, 0.696);
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.form-control {
+  border: 1px solid rgba(0, 200, 150, .7);
+  box-shadow: 0 0 1rem rgba(80, 80, 80, .2);
+  background-color: rgba(20, 28, 40, 1);
+  color: rgba(160, 165, 180, 1);
+}
+.form-control:focus, .form-control:active {
+  outline: none;
+  border: 1.5px solid rgba(14, 14, 14, 0.696);
+  box-shadow: 0 0 1rem rgba(80, 80, 80, .2);
+  background-color: rgba(20, 28, 40, 1);
+  color: rgba(160, 165, 180, 1);
+}
+.form-control::placeholder {
+  color: rgba(150, 150, 150, 1);
+  font-size: .95rem;
+}
+#foot {
+  direction: ltr;
+}
+.sosial {
+  display: flex;
+  flex-direction: column;
+}
+.tit {
+  color: rgba(160, 165, 180, 1);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.sosial > a {
+  text-decoration: none;
+  color: rgba(160, 165, 180, 1);
+  font-size: .7rem;
+}
+.footimg {
+  width: 100px;
+  height: 100px;
+}

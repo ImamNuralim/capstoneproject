@@ -2,6 +2,14 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.142), 0 2px 4px -1px rgba(0, 0, 0, 0.153);
 
 }
+.btn-item{
+    width: 45px;
+    border-radius: 16px;
+}
+.nav-item{
+    margin-right: 50%;
+    justify-content: center;
+}
 
 
 @media (min-width: 320px) and (max-width: 480px) {
@@ -41,7 +49,7 @@
 
 @media(min-width:1025px){
     .btn-pill{
-        width: 25px;
+        width: 80px;
         height: 35px; ;
     }
 }

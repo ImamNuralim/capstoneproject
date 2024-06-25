@@ -5,6 +5,52 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+.modal-content {
+    background-color: blur;
+    border: none;
+}
+.modal-dialog-centered {
+    max-width: 100%;
+    margin: 0;
+}
+.modal-dialog {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+}
+.modal-body img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: relative;
+}
+.close-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10; /* Ensure the close button is above the image */
+}
+.close-btn:hover {
+    color: #ccc;
+}
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }

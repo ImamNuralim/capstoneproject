@@ -88,7 +88,7 @@ function showSurah (e, ayat, footnotes) {
            ${footnotes}
           </div>`;
 }
-
+ 
 function showSurah2 (e, ayat) {
   return `${e.arabic_text}  (<span class="ayat">${ayat.toLocaleString('ar-EG')}</span>)
            `;
@@ -97,7 +97,7 @@ function showSurah2 (e, ayat) {
 (function sendEmail () {
   const scriptURL = 'https://script.google.com/macros/s/AKfycbyZ5RLeHOVatLhrLE7nSoL22kEB5s9OTgyOIezKEJIvpYE2ROsYf35UBJMJ2D88WkknhQ/exec';
   const form = document.forms['submit-to-google-sheet'];
-  const btnKirim = document.querySelector('.btn-kirim');
+  const btnKirim = document.querySelector('.btn-kirim'); 
   const btnLoading = document.querySelector('.btn-loading');
   const myAllert = document.querySelector('.my-alert');
   form.addEventListener('submit', e => {
