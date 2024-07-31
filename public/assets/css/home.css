@@ -1,25 +1,138 @@
+.modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.modal-content {
+    align-content: center;
+    border-radius: 10px !important;
+    width: 50%;
+    /* Adjust width as needed */
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ratakan semua elemen ke kiri */
+    padding: 20px; /* Sesuaikan padding modal jika perlu */
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    color: #555; /* Warna ikon */
+    transition: color 0.3s; /* Animasi transisi warna */
+}
+
+.icon-button:hover {
+    color: #4CAF50; /* Warna ikon saat hover */
+}
+
+.image-preview {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-preview img {
+    width: 20%; /* Atur lebar maksimum gambar */
+    height: 20%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.kategori1 {
+    width: 100%; /* Kontainer mengambil lebar penuh modal */
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: flex-start; /* Pastikan elemen drop-down berada di sebelah kiri */
+    align-items: center; /* Tengah vertikal jika diperlukan */
+}
+
+.drop-down {
+    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
+    width: auto; /* Mengambil lebar yang diperlukan oleh konten */
+    margin-left: 10px;
+}
+
+.form-group {
+    width: 95%; /* Sama dengan drop-down, mengambil lebar penuh */
+    height: fit-content;
+    margin-bottom: 10px; /* Menambahkan jarak antar elemen */
+    display: flex;
+    flex-direction: column; /* Atur elemen dalam grup secara vertikal */
+    align-items: flex-start; /* Pastikan elemen input rata kiri */
+}
+
+.form-control1 {
+    width: 100%; /* Memastikan textarea mengambil lebar penuh dari modal */
+    height: 100px; /* Sesuaikan tinggi sesuai kebutuhan */
+    box-sizing: border-box; /* Memastikan padding tidak menambah ukuran elemen */
+    resize: vertical; /* Izinkan pengguna mengubah ukuran tinggi, tapi tidak lebar */
+    padding: 10px; /* Menambahkan padding untuk kenyamanan pengguna */
+    font-family: inherit; /* Menggunakan font yang sama dengan elemen lainnya */
+    border-radius: 5px; /* Menambahkan sudut melengkung jika diperlukan */
+    border: 1px solid #aaaaaa; /* Border dengan warna hijau */
+}
+
+
+
+.media {
+    margin-left: 20px;
+    width: 100%; /* Mengambil lebar penuh dari modal */
+    margin-bottom: 10px; /* Menambahkan jarak antar elemen */
+    display: flex;
+    justify-content: flex-start; /* Pastikan elemen input file berada di sebelah kiri */
+}
+
+
+
 .kategori {
     border-radius: 10px;
-    box-shadow:-1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
+    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
     background-color: #ffffff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.row{
+
+.row {
     display: flex;
     flex-wrap: wrap;
 }
-.content{
+
+.content {
     width: 50%;
 }
-.call-to-action{
-    width: 30%;
-    border-radius:10px ;
-    box-shadow:-1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
+.modal-header{
+    justify-content: center;
 }
-.card{
+.modal-content1 {
+    background-color: #ffffff;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
+    width: 50%;
+    height: auto;
+}
+
+.call-to-action {
+    height:min-content;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
+}
+
+.card {
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    box-shadow:-1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
+    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
 }
 
 
@@ -28,12 +141,15 @@
     .btn-pill {
         font-size: 14px;
     }
+
     .kategori {
         display: none;
     }
+
     .card-post {
         width: 100%;
     }
+
     .call-to-action {
         display: none;
     }
@@ -43,9 +159,11 @@
     .kategori {
         display: none;
     }
+
     .card-post {
         width: 100%;
     }
+
     .call-to-action {
         display: none;
     }
@@ -57,28 +175,30 @@
     .kategori {
         display: none;
     }
+
     .card-post {
         width: 100%;
         font-size: 10px;
     }
+
     .call-to-action {
         display: none;
     }
 }
 
 /*pc*/
-@media (min-width:769px) and (max-width:1024px){
-    .kategori{
+@media (min-width:769px) and (max-width:1024px) {
+    .kategori {
         display: none;
     }
-    .card-post{
+
+    .card-post {
         width: 60%;
     }
-    .call-to-action{
+
+    .call-to-action {
         width: 35%;
     }
 }
 
-@media(min-width:1025px){
-
-}
+@media(min-width:1025px) {}

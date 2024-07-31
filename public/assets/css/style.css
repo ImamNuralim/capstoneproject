@@ -93,7 +93,7 @@ body {
 }
 .judul {
   font-size: 1.25rem;
-  color: 0695dd;
+  color: #0695dd;
   font-weight: 600;
 }
 .heading {
@@ -104,7 +104,7 @@ body {
   font-size: 1.6rem;
   color: rgba(130, 135, 150, 1);
   font-weight: 700;
-  border-bottom: 3px solid rgba(14, 14, 14, 0.696);
+  border-bottom: 3px solid #4299E1;
   margin: 0 auto;
 }
 .list-surah {
@@ -114,10 +114,10 @@ body {
   direction: rtl;
 }
 .grid-items {
-  background-color: rgba(166, 166, 166, 0.586);
+  background-color: rgba(255, 255, 255, 0.586);
   border-radius: .8rem;
-  box-shadow: 0 0 1rem rgba(80, 80, 80, .2);
-  border: 1px solid rgba(120, 120, 120, .5);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(108, 108, 108, 0.22);
+  border: 1px solid rgba(232, 232, 232, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,7 +152,7 @@ body {
   height: 100vh;
 }
 .modal-content {
-  background-color: rgba(20, 28, 40, 1);
+  background-color: #dfdfdf;
 }
 .modal-header {
   border: none;
@@ -162,7 +162,7 @@ body {
 }
 .bungkus {
   width: min(100%, 900px);
-  background-color: rgba(20, 28, 40, 1);
+  background-color: rgb(255, 255, 255);
   padding: 2rem .8rem;
 }
 .arabic {
@@ -171,7 +171,7 @@ body {
   font-family: "Amiri", serif;
   font-size: 2.2rem;
   line-height: 6rem;
-  color: rgba(170, 175, 200, 1);
+  color: rgb(52, 52, 52);
   border-radius: .5rem;
   padding: 1rem;
   font-weight: 800;
@@ -188,8 +188,8 @@ body {
   font-family: "Amiri", serif;
   font-size: 2.2rem;
   line-height: 6rem;
-  color: rgba(170, 175, 200, 1);
-  background-color: rgba(20, 28, 40, 1);
+  color: rgb(33, 33, 33);
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
 }
 .bismillah {
@@ -209,14 +209,14 @@ body {
   margin-top: 1.5rem;
 }
 .terjemah {
-  font-family: 'Lato', Sans-Serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1.1rem;
-  color: rgba(2, 2, 2, 0.759);
+  color: rgba(2, 2, 2, 0.963);
   font-weight: 800;
 }
 .terjemahan {
   margin-top: .7rem;
-  color: rgba(170, 175, 200, 1);
+  color: rgb(25, 25, 25);
   font-size: 1rem;
   line-height: 1.25rem;
   font-family: 'Lato', Sans-Serif;
@@ -225,9 +225,9 @@ body {
   margin-top: 1rem;
 }
 .catatan {
-  color: red;
+  color: rgb(56, 56, 56);
   font-family: 'Lato', Sans-Serif;
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: 700;
 }
 .catatanny {
@@ -242,7 +242,7 @@ body {
   font-size: 1.5rem;
 }
 .button {
-  background-color: rgba(14, 14, 14, 0.696);
+  background-color: #0695dd;
   color: rgba(20, 28, 40, 1);
   width: 100%;
   outline: none;

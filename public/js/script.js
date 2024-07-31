@@ -78,7 +78,7 @@ function uiListSurah (e, i) {
 function showSurah (e, ayat, footnotes) {
   return `<div class="bungkus">
            <div class="ayatbungkus d-flex justify-content-between w-100">
-             <div class="ayat ayah d-flex justify-content-center align-items-center"><img src="assets/ayat.png" width="80" class="kurung"/><h1 class="ayatny">${ayat.toLocaleString('ar-EG')}</h1></div>
+             <div class="ayat ayah d-flex justify-content-center align-items-center"><img src="img/ayat.png" width="80" class="kurung"/><h1 class="ayatny">${ayat.toLocaleString('ar-EG')}</h1></div>
              <div align="right" class="arabic">${e.arabic_text}</div>
            </div>
            <div class="translate">

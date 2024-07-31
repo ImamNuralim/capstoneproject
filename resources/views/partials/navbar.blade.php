@@ -27,7 +27,7 @@
                 </h1>
                 <div class="navbar-nav flex-row order-md-last">
                     @guest
-                        <div class="nav-item  me-2" style="display: flex; justify-content: center;">
+                            <div class="nav-item  me-2" style="display: flex; justify-content: center;">
                             <div class="btn-items" >
                                 <a href="{{ route('home') }}"
                                     class="btn-item btn btn-outline-info border-info  {{ request()->route()->named('home') ? 'active' : '' }}">
@@ -82,11 +82,34 @@
                                     class="btn-item btn btn-outline-info border-info {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
                                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
                                 </a>
+
                             </div>
                         </div>
-                        <div class="nav-item d-md-flex me-3">
+                        <div class="nav-item dropdown d-md-flex me-3">
+                            <a id="dropdown" href="#" class="nav-link d-flex lh-1 text-reset p-0"
+                                data-bs-toggle="dropdown">
+                                <span class="avatar avatar-sm rounded-circle"
+                                    style="background-color: rgb(186, 228, 240)">
+                                    <img src="{{ asset('img/user2.png') }}"  alt=""></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" style="border-radius: 10px">
+                                <a target="_blank" class="dropdown-item text-dark"
+                                    href="#">
+                                    Lihat Profile
+                                </a>
+                                <a href="#"
+                                    onclick="event.preventDefault(); document.getElementById('signout-form').submit();"
+                                    class="dropdown-item">
+                                    Sign out
+                                </a>
+                                <form id="signout-form" action="#" method="POST" class="d-block">
+                                    @csrf
+                                </form>
+                            </div>
+                        </div>
+                        {{-- <div class="nav-item d-md-flex me-3">
                             <div class="btn-list">
-                                <a wire:navigate href="{{ route('login') }}" wire:navigate
+                                <a wire:navigate href="{{ route('auth.login') }}" wire:navigate
                                     class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('login') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -98,9 +121,9 @@
                                         </path>
                                         <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
                                     </svg>
-                                    Masuk
+                                    Log In
                                 </a>
-                                <a wire:navigate href="{{ route('login') }}" wire:navigate
+                                <a wire:navigate href="{{ route('auth.register') }}" wire:navigate
                                     class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('login') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -112,11 +135,11 @@
                                         <path d="M19 16v6" />
                                         <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
                                     </svg>
-                                    Masuk
+                                    Sign In
                                 </a>
 
                             </div>
-                        </div>
+                        </div> --}}
 
 
                     @endguest

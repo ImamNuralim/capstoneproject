@@ -8,22 +8,12 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    /**
-     * Menampilkan form pendaftaran.
-     *
-     * @return \Illuminate\View\View
-     */
+
     public function showRegistrationForm()
     {
         return view('auth.register');
     }
 
-    /**
-     * Menangani permintaan pendaftaran pengguna baru.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function register(Request $request)
     {
         // Validasi data yang diterima dari form pendaftaran

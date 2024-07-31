@@ -5,10 +5,21 @@
     <link rel="shortcut icon" type="image/png" href="../img/logoTSII.png" />
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
+<style>
+    .card-body{
+        margin-top: -50px;
+    }
+    .page-wrapper{
+        background-color:#699ce82c;
+    }
+    .logo{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    }
+</style>
 <header class="navbar navbar-expand-md navbar-light d-print-none">
     <div class="container-xl">
         <h1 class="navbar-brand text-info navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-            <a href="{{ route('home') }}">
+            <a class="logo" href="{{ route('home') }}">
                 Teras Ilmu Center
             </a>
         </h1>
@@ -16,7 +27,7 @@
             @guest
                 <div class="nav-item d-none d-md-flex me-3">
                     <div class="btn-list">
-                        <a wire:navigate href="{{ route('login') }}" wire:navigate
+                        <a wire:navigate href="{{ route('auth.login') }}" wire:navigate
                             class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('login') ? 'active' : '' }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -30,7 +41,7 @@
                             </svg>
                             Log in
                         </a>
-                        <a wire:navigate href="{{ route('register') }}" wire:navigate
+                        <a wire:navigate href="{{ route('auth.register') }}" wire:navigate
                             class="btn btn-outline-info border-info btn-pill {{ request()->route()->named('register') ? 'active' : '' }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-plus"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -126,8 +137,8 @@
                   <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
                     <img src="../img/logoTSII.png" width="180" alt="">
                   </a>
-                  <p class="text-center">Your Social Campaigns</p>
-                  <form action="{{ route('login') }}" method="POST">
+                  <p class="text-center"><b>Gabung Dengan Kami!</b></p>
+                  <form action="{{ route('auth.login') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Username</label>
@@ -149,7 +160,7 @@
                     <a href="{{ route('home') }}" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</a>
                     <div class="d-flex align-items-center justify-content-center">
                       <p class="fs-2 mb-0 fw-bold">Baru Menggunakan TIC Q&A?</p>
-                      <a class="text-primary fw-bold ms-2" href="{{ route('register') }}">Create an account</a>
+                      <a class="text-primary fw-bold ms-2" href="{{ route('auth.login') }}">Create an account</a>
                     </div>
                   </form>
                 </div>

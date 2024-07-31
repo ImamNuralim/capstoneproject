@@ -30,6 +30,6 @@
         </div>
     </div>
 
-    <script src="{{ asset('share-popup.js') }}"></script>
+    <script src="{{ asset('js/share-popup.js') }}"></script>
 </body>
 @endsection

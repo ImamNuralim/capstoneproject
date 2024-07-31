@@ -33,13 +33,11 @@ use App\Http\Controllers\UstazController;
 Route::get('/', function(){ return view('home',[ 'title' => 'Homepage', 'active' => 'homepage']);});
 
 //login
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::get('/home', function () { return view('home');})->name('home');
+Route::get('/login', [LoginController::class, 'index'])->name('auth.login');
 
 //register
-Route::get('/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
+Route::get('/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('auth.register');
+
 
 //materivideo
 Route::get('/materivideo', [MateriVideoController::class, 'index'])->name('materivideo.index');

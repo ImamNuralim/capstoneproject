@@ -2,7 +2,7 @@
 @section('surah')
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -35,21 +35,23 @@
       </div>
     </div>
     <div class="modal fade" id="noterjemahan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title jdl" id="exampleModalLabel"></h1>
-            <button type="button" class="btn-close closed btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body mdlQuran d-flex flex-column align-items-center">
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn button closed p-2" data-bs-dismiss="modal">Tutup</button>
-          </div>
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title jdl" id="exampleModalLabel"></h1>
+                    <button type="button" class="btn-close closed btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body mdlQuran d-flex flex-column align-items-center">
+                    <!-- Konten modal -->
+                </div>
+                <div class="modal-footer">
+                    <button id="closeModalButton" type="button" class="btn button closed p-2" data-bs-dismiss="modal">Tutup</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+
+
     <div class="modal fade opsi" id="opsi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -64,33 +66,13 @@
       </div>
     </div>
     <section class="container2 p-4" id="KirimMasukan">
-      <div class="heading">
-         <h1 class="judul-list mt-5">Masukan Untuk Developer</h1>
-      </div>
+
       <p class="mt-4 mb-5 introduction">Kami selaku Developer <span class="judul">Quran-ku</span> mengharapkan masukan dan saran dari anda supaya kami bisa tahu keluhan anda saat menggunakan aplikasi <span class="judul">Quran-ku</span>. Beri kami pesan yang sopan dan jelas supaya kami sigap dalam menanggapi keluhan anda.</p>
       <div class="alert d-none alert-success alert-dismissible fade show my-alert" role="alert">
            <strong>Terimakasih !</strong> Pesan anda sudah terkirim
            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-      <form name="submit-to-google-sheet">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Nama</label>
-          <input type="text" class="form-control" placeholder="contoh: beni" name="nama">
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">No Whatsapp</label>
-          <input type="number" class="form-control" name="nowa" placeholder="contoh: 62821xxxxxxxx">
-        </div>
-        <div class="mb-3">
-          <label for="pesan" class="form-label">Pesan</label>
-          <textarea class="form-control" id="pesan" rows="3" name="pesan" placeholder="contoh: Hallo Assalamualaikum"></textarea>
-        </div>
-        <button type="submit" class="button btn btn-kirim submitny mt-3">Kirim</button>
-        <button class="button btn btn-loading d-none mt-3 text-white" type="button" style="color: rgba(20, 28, 40, 1); background-color: rgba(0, 200, 150, 1);" disabled>
-          <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-          <span role="status">Loading...</span>
-        </button>
-      </form>
+
     </section>
     <footer id="foot" class="foot mt-5 d-flex justify-content-center align-items-center">
       <div class="container5 d-flex justify-content-center flex-wrap gap-5 p-4">
