@@ -17,8 +17,7 @@
 
 <body>
     <div class="page">
-
-        <header class="navbar navbar-expand-md navbar-light d-print-none">
+        <header class="navbar navbar-expand-md navbar-light sticky-top d-print-none">
             <div class="container">
                 <h1 class="navbar-brand text-info navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
                     <a href="{{ route('home') }}">
@@ -78,8 +77,8 @@
                                     </svg>
 
                                 </a>
-                                <a href="#"
-                                    class="btn-item btn btn-outline-info border-info {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
+                                <a href="{{ route('livechat.index') }}"
+                                    class="btn-item btn btn-outline-info border-info {{ request()->route()->named('livechat.index') ? 'active' : '' }}">
                                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
                                 </a>
 
@@ -151,6 +150,7 @@
             <div class="container">
                 @yield('dashboard')
                 @yield('home')
+                @yield('livechat')
                 @yield('materivideo')
                 @yield('kitab')
                 @yield('hadith')

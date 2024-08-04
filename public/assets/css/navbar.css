@@ -2,10 +2,12 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.142), 0 2px 4px -1px rgba(0, 0, 0, 0.153);
 
 }
+
 .btn-item{
     width: 45px;
     border-radius: 16px;
 }
+
 .nav-item{
     margin-right: 50%;
     justify-content: center;
@@ -13,7 +15,19 @@
 
 
 @media (min-width: 320px) and (max-width: 480px) {
-
+    .navbar-brand{
+        display: none;
+    }
+    .navbar-nav {
+        justify-content: center;
+    }
+    .btn-items {
+        width: 100%;
+    }
+    .btn-pill{
+        width: 50px;
+        height: 35px; ;
+    }
 
 }
 
@@ -34,10 +48,7 @@
         justify-content: flex-end;
 
     }
-    .btn-pill{
-        width: 10px;
-        height: 35px; ;
-    }
+
 }
 
 @media (min-width:769px) and (max-width:1024px){

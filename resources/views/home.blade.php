@@ -4,7 +4,7 @@
 
     <div class="container mt-3">
         <div class="row">
-            <div class="col-lg-2 kategori">
+            <div class="col-lg-2 kategori sticky-top">
                 <h3 style="padding: 1.5px;">Kategori</h3>
 
                 <li href="" style="list-style: none; padding:2px ">
@@ -134,7 +134,7 @@
 
 
             <div class="modal" id="askQuestionModal" tabindex="-1" role="dialog">
-                <div class="modal-dialog modal-l modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <form id="questionForm" action="" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -160,11 +160,21 @@
                                 </div>
                                 <div class="media">
                                     <!-- Input file disembunyikan dengan multiple -->
-                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" style="display: none;" multiple />
+                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
+                                        style="display: none;" multiple />
                                     <!-- Ikon pengganti yang akan ditampilkan -->
                                     <button id="uploadButton" class="icon-button" aria-label="Upload Images">
                                         <!-- Tambahkan ikon Tabler di sini -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M15 8h.01M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z"/><path d="m3 16l5-5c.928-.893 2.072-.893 3 0l5 5"/><path d="m14 14l1-1c.928-.893 2.072-.893 3 0l3 3"/></g></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                            viewBox="0 0 24 24">
+                                            <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="2">
+                                                <path
+                                                    d="M15 8h.01M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z" />
+                                                <path d="m3 16l5-5c.928-.893 2.072-.893 3 0l5 5" />
+                                                <path d="m14 14l1-1c.928-.893 2.072-.893 3 0l3 3" />
+                                            </g>
+                                        </svg>
 
                                     </button>
                                 </div>
@@ -182,9 +192,9 @@
 
 
 
-            <div class="col-lg-1 call-to-action">
+            <div class="col-lg-1 call-to-action ">
                 <h3>Iklan</h3>
-                <ul class="list-group">
+                <ul class="list-group ">
                     <li class="list-group-item">
                         <img src="{{ asset('img/alquran.png') }}" class="img-fluid"
                             style="max-width: 30%; height: auto;">
@@ -241,36 +251,55 @@
         </div>
     </div>
     <script>
-       document.getElementById('uploadButton').addEventListener('click', function(event) {
-    event.preventDefault(); // Mencegah pengiriman form
-    document.getElementById('avatar').click(); // Memicu klik pada input file
-});
+        document.getElementById('uploadButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form
+            document.getElementById('avatar').click(); // Memicu klik pada input file
+        });
 
-document.getElementById('avatar').addEventListener('change', function(event) {
-    const preview = document.getElementById('preview');
-    const files = event.target.files;
+        document.getElementById('avatar').addEventListener('change', function(event) {
+            const preview = document.getElementById('preview');
+            const files = event.target.files;
 
-    // Hapus semua pratinjau sebelumnya
-    preview.innerHTML = '';
+            // Hapus semua pratinjau sebelumnya
+            preview.innerHTML = '';
 
-    // Iterasi melalui setiap file
-    for (let i = 0; i < files.length; i++) {
-        const file = files[i];
+            // Iterasi melalui setiap file
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
 
-        if (file && file.type.startsWith('image/')) {
-            const reader = new FileReader();
+                if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();
 
-            reader.onload = function(e) {
-                // Buat elemen img baru dan tetapkan sumbernya ke hasil pembacaan
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                preview.appendChild(img);
+                    reader.onload = function(e) {
+                        // Buat elemen img baru dan tetapkan sumbernya ke hasil pembacaan
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        preview.appendChild(img);
+                    }
+
+                    reader.readAsDataURL(file);
+                }
             }
+        });
+        <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    window.addEventListener('scroll', function() {
+      var kategori = document.querySelector('.kategori.sticky-top');
+      var stickyOffset = kategori.offsetTop;
 
-            reader.readAsDataURL(file);
-        }
-    }
-});
+      console.log('Posisi Scroll:', window.pageYOffset);
+      console.log('Offset Elemen:', stickyOffset);
+
+      if (window.pageYOffset > stickyOffset) {
+        kategori.classList.add('sticky-active');
+        console.log('Menambahkan kelas sticky-active');
+      } else {
+        kategori.classList.remove('sticky-active');
+        console.log('Menghapus kelas sticky-active');
+      }
+    });
+  });
+</script>
 
     </script>
 @endsection

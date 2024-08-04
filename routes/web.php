@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KitabController;
 use App\Http\Controllers\QuranController;
 use App\Http\Controllers\UstazController;
+use App\Http\Controllers\LiveChatController;
 
 
 
@@ -73,3 +74,6 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('userprofile.i
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [JawabanController::class, 'index'])->name('home');
+
+//livechat
+Route::get('/livechat', [LivechatController::class, 'index'])->name('livechat.index');
