@@ -4,7 +4,7 @@
 
     <div class="container mt-3">
         <div class="row">
-            <div class="col-lg-2 kategori sticky-top">
+            <div class="col-lg-2 kategori">
                 <h3 style="padding: 1.5px;">Kategori</h3>
 
                 <li href="" style="list-style: none; padding:2px ">
@@ -93,8 +93,7 @@
                                         </button>
                                     </div>
                                     <div class="col-4">
-                                        <button class="btn btn-ghost-secondary w-100 btn-pill" type="button"
-                                            data-bs-toggle="modal" data-bs-target="#askQuestionModal">
+                                        <a href="{{ route('user.answerstore') }}" class="btn btn-ghost-secondary w-100 btn-pill">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 class="icon icon-tabler icon-tabler-message-question" width="24"
                                                 height="24" viewBox="0 0 24 24" stroke-width="2"
@@ -103,15 +102,15 @@
                                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                                 <path d="M8 9h8"></path>
                                                 <path d="M8 13h6"></path>
-                                                <path
-                                                    d="M14 18h-1l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v4.5">
+                                                <path d="M14 18h-1l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v4.5">
                                                 </path>
                                                 <path d="M19 22v.01"></path>
                                                 <path d="M19 19a2.003 2.003 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483">
                                                 </path>
                                             </svg>
                                             Jawab
-                                        </button>
+                                        </a>
+
                                     </div>
                                 </div>
                             </div>

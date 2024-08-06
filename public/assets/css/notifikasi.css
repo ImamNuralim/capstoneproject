@@ -1,0 +1,25 @@
+/* CSS untuk dropdown di desktop */
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000;
+    width: 300px; /* Atur sesuai kebutuhan */
+}
+
+.notification-dropdown.show {
+    display: block;
+}
+
+/* CSS untuk tampilan halaman di mobile */
+@media (max-width: 768px) {
+    #notification-button {
+        display: none; /* Menyembunyikan tombol dropdown di layar mobile */
+    }
+    .notification-dropdown {
+        display: none; /* Menyembunyikan dropdown di layar mobile */
+    }
+}

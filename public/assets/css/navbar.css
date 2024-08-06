@@ -13,6 +13,30 @@
     justify-content: center;
 }
 
+/* CSS untuk dropdown di layar desktop */
+.notification-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000;
+    width: 200px;
+}
+
+.notification-dropdown.show {
+    display: block;
+}
+
+/* CSS untuk tampilan halaman di layar mobile */
+@media (max-width: 768px) {
+    .notification-dropdown {
+        display: none; /* Menyembunyikan dropdown di layar mobile */
+    }
+}
+
+
 
 @media (min-width: 320px) and (max-width: 480px) {
     .navbar-brand{

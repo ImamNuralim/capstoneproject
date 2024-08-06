@@ -12,6 +12,8 @@ use App\Http\Controllers\KitabController;
 use App\Http\Controllers\QuranController;
 use App\Http\Controllers\UstazController;
 use App\Http\Controllers\LiveChatController;
+use App\Http\Controllers\AnswerStoreController;
+use App\Http\Controllers\NotifikasiController;
 
 
 
@@ -77,3 +79,11 @@ Route::get('/home', [JawabanController::class, 'index'])->name('home');
 
 //livechat
 Route::get('/livechat', [LivechatController::class, 'index'])->name('livechat.index');
+
+
+//answerstore
+
+Route::get('/answerstore', [AnswerStoreController::class, 'index'])->name('user.answerstore');
+
+//notifikasi
+Route::get('/notifikasi', [NotifikasiController::class, 'index'])->name('user.notifikasi.notifikasi');

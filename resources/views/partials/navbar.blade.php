@@ -26,8 +26,8 @@
                 </h1>
                 <div class="navbar-nav flex-row order-md-last">
                     @guest
-                            <div class="nav-item  me-2" style="display: flex; justify-content: center;">
-                            <div class="btn-items" >
+                        <div class="nav-item  me-2" style="display: flex; justify-content: center;">
+                            <div class="btn-items">
                                 <a href="{{ route('home') }}"
                                     class="btn-item btn btn-outline-info border-info  {{ request()->route()->named('home') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home"
@@ -42,7 +42,17 @@
 
                                 <a href="{{ route('kitab.index') }}" wire:navigate
                                     class="btn-item btn btn-outline-info border-info {{ request()->route()->named('index') ? 'active' : '' }}">
-                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /><path d="M3 6l0 13" /><path d="M12 6l0 13" /><path d="M21 6l0 13" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-book">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                                        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                                        <path d="M3 6l0 13" />
+                                        <path d="M12 6l0 13" />
+                                        <path d="M21 6l0 13" />
+                                    </svg>
 
                                 </a>
                                 <a href="{{ route('materivideo.index') }}"
@@ -64,8 +74,8 @@
                                     </svg>
 
                                 </a>
-                                <a href="#"
-                                    class="btn-item btn btn-outline-info border-info {{ request()->route()->named('appearance.index') ? 'active' : '' }}">
+                                <a href="{{ route('user.notifikasi.notifikasi') }}"
+                                    class="btn-item btn btn-outline-info border-info {{ request()->route()->named('notifications.index') ? 'active' : '' }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell"
                                         width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -75,11 +85,22 @@
                                         </path>
                                         <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
                                     </svg>
-
                                 </a>
+
+
+
                                 <a href="{{ route('livechat.index') }}"
                                     class="btn-item btn btn-outline-info border-info {{ request()->route()->named('livechat.index') ? 'active' : '' }}">
-                                    <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-message"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9h8" /><path d="M8 13h6" /><path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" /></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"
+                                        class="icon icon-tabler icons-tabler-outline icon-tabler-message">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M8 9h8" />
+                                        <path d="M8 13h6" />
+                                        <path
+                                            d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12z" />
+                                    </svg>
                                 </a>
 
                             </div>
@@ -89,11 +110,10 @@
                                 data-bs-toggle="dropdown">
                                 <span class="avatar avatar-sm rounded-circle"
                                     style="background-color: rgb(186, 228, 240)">
-                                    <img src="{{ asset('img/user2.png') }}"  alt=""></span>
+                                    <img src="{{ asset('img/user2.png') }}" alt=""></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" style="border-radius: 10px">
-                                <a target="_blank" class="dropdown-item text-dark"
-                                    href="#">
+                                <a target="_blank" class="dropdown-item text-dark" href="#">
                                     Lihat Profile
                                 </a>
                                 <a href="#"
@@ -150,12 +170,14 @@
             <div class="container">
                 @yield('dashboard')
                 @yield('home')
+                @yield('answerstore')
                 @yield('livechat')
                 @yield('materivideo')
                 @yield('kitab')
                 @yield('hadith')
                 @yield('surah')
                 @yield('detail')
+                @yield('notifikasi')
             </div>
         </div>
     </div>
@@ -182,6 +204,7 @@
             }
         }
     </script>
+    <script></script>
 </body>
 
 </html>
