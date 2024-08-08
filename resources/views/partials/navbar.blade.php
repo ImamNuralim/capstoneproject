@@ -113,7 +113,7 @@
                                     <img src="{{ asset('img/user2.png') }}" alt=""></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" style="border-radius: 10px">
-                                <a target="_blank" class="dropdown-item text-dark" href="#">
+                                <a target="_blank" class="dropdown-item text-dark" href="{{ route('user.profile.index') }}">
                                     Lihat Profile
                                 </a>
                                 <a href="#"
@@ -178,6 +178,7 @@
                 @yield('surah')
                 @yield('detail')
                 @yield('notifikasi')
+                @yield('profile')
             </div>
         </div>
     </div>

@@ -13,12 +13,16 @@
     </header>
 
     <!-- Kategori Pemilih -->
-    <div class="category-selector" style="height: 50" id="categorySelector">
+    <div class="category-selector">
         <h3>Pilih Kategori</h3>
-        <button class="category-btn" data-category="category1">Hukum</button>
-        <button class="category-btn" data-category="category2">Kesehatan</button>
-        <button class="category-btn" data-category="category3">Teknologi</button>
+        <select id="categoryDropdown" class="category-dropdown" style="width: 200px;">
+            <option value="category1">Sholat</option>
+            <option value="category2">Nikah</option>
+            <option value="category3">Puasa</option>
+            <option value="category4">Zakat</option>
+        </select>
     </div>
+
 
     <!-- Chat -->
     <main class="msger-chat" id="chatSection" style="display: none;">
@@ -60,21 +64,20 @@
 </section>
 
 <script>
-    // Menangani pemilihan kategori
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const chatSection = document.getElementById('chatSection');
-    const chatForm = document.getElementById('chatForm');
-    const categorySelector = document.getElementById('categorySelector');
+    const categoryDropdown = document.getElementById('categoryDropdown');
+        const chatSection = document.getElementById('chatSection');
+        const chatForm = document.getElementById('chatForm');
+        const categorySelector = document.querySelector('.category-selector');
 
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const selectedCategory = this.getAttribute('data-category');
-            console.log('Kategori terpilih:', selectedCategory);
-            categorySelector.style.display = 'none'; // Sembunyikan pemilih kategori
-            chatSection.style.display = 'block'; // Tampilkan chat
-            chatForm.style.display = 'flex'; // Tampilkan form input
+        categoryDropdown.addEventListener('change', function() {
+            const selectedCategory = this.value;
+            if (selectedCategory) {
+                console.log('Kategori terpilih:', selectedCategory);
+                categorySelector.style.display = 'none'; // Sembunyikan pemilih kategori
+                chatSection.style.display = 'block'; // Tampilkan chat
+                chatForm.style.display = 'flex'; // Tampilkan form input
+            }
         });
-    });
 </script>
 
 

@@ -14,7 +14,7 @@
                         </span>
                     </div>
                     <div class="col-11" style="padding-left:25px">
-                        <a class="username no-underline" href="{{ route('userprofile.index') }}">
+                        <a class="username no-underline" href="{{ route('user.profile.index') }}">
                             <b>
                                 <span style="text-direction: none">Imam Nuralim</span>
                             </b>
@@ -269,7 +269,7 @@
                         </span>
                     </div>
                     <div class="col-11" style="padding-left:25px">
-                        <a class="username no-underline" href="{{ route('userprofile.index') }}">
+                        <a class="username no-underline" href="{{ route('user.profile.index') }}">
                             <b>
                                 <span style="text-direction: none">Mukhamad Ferry</span>
                             </b>

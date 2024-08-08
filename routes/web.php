@@ -87,3 +87,6 @@ Route::get('/answerstore', [AnswerStoreController::class, 'index'])->name('user.
 
 //notifikasi
 Route::get('/notifikasi', [NotifikasiController::class, 'index'])->name('user.notifikasi.notifikasi');
+
+//profile
+Route::get('/profile', [ProfileController::class, 'index'])->name('user.profile.index');
