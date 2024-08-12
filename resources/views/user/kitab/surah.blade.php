@@ -67,7 +67,7 @@
     </div>
     <section class="container2 p-4" id="KirimMasukan">
 
-      <p class="mt-4 mb-5 introduction">Kami selaku Developer <span class="judul">Quran-ku</span> mengharapkan masukan dan saran dari anda supaya kami bisa tahu keluhan anda saat menggunakan aplikasi <span class="judul">Quran-ku</span>. Beri kami pesan yang sopan dan jelas supaya kami sigap dalam menanggapi keluhan anda.</p>
+      <p class="mt-4 mb-5 introduction"> <span class="judul">Quran-ku</span> mengharapkan masukan dan saran dari anda supaya kami bisa tahu keluhan anda saat menggunakan aplikasi <span class="judul">Quran-ku</span>. Beri kami pesan yang sopan dan jelas supaya kami sigap dalam menanggapi keluhan anda.</p>
       <div class="alert d-none alert-success alert-dismissible fade show my-alert" role="alert">
            <strong>Terimakasih !</strong> Pesan anda sudah terkirim
            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>

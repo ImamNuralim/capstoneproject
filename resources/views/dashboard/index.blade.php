@@ -45,10 +45,14 @@
               <span class="hide-menu">User Info</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="{{ route('dashboard.ustaz') }}" aria-expanded="false">
-                <span class="hide-menu">Ustaz</span>
-              </a>
-            </li>
+                <a class="sidebar-link" href="{{ route('dashboard.ustaz') }}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-layout-dashboard"></i>
+                  </span>
+                  <span class="hide-menu">Ustaz</span>
+                </a>
+              </li>
+
             <li class="sidebar-item">
               <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
                 <span>

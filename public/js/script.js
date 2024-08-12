@@ -6,7 +6,7 @@ const judulSurah = document.querySelector('.modal-title');
 const judulSurah2 = document.querySelector('.jdl');
 
 (function getListSurah() {
-  return fetch('https://quran-api.santrikoding.com/api/surah')
+  return fetch('https://open-api.my.id/api/quran/surah')
   .then(response => response.json())
   .then(response => {
     let cards = '';
