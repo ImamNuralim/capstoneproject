@@ -1,336 +1,719 @@
 @extends('dashboard.index')
 @section('ustaz')
     <link rel="stylesheet" href="css/ustaz.css">
-    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
-        data-sidebar-position="fixed" data-header-position="fixed">
-        <div class="body-wrapper">
-            <head>
-                <meta charset="utf-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-                <style>
-                    body {
-                        color: #566787;
-                        background: #f5f5f5;
-                        font-family: 'Varela Round', sans-serif;
-                        font-size: 13px;
-                    }
+    <!DOCTYPE html>
+    <html lang="en">
 
-                    .table-responsive {
-                        margin: 30px 0;
-                    }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                color: #566787;
+                background: #f5f5f5;
+                font-family: 'Varela Round', sans-serif;
+                font-size: 13px;
+            }
 
-                    .table-wrapper {
-                        min-width: 1000px;
-                        background: #fff;
-                        padding: 20px 25px;
-                        border-radius: 3px;
-                        box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-                    }
+            .modal-dialog-centered {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100vh;
+                min-height: 100vh;
+            }
 
-                    .table-title {
-                        padding-bottom: 15px;
-                        background: #299be4;
-                        color: #fff;
-                        padding: 16px 30px;
-                        margin: -20px -25px 10px;
-                        border-radius: 3px 3px 0 0;
-                    }
+            .card-container {
 
-                    .table-title h2 {
-                        margin: 5px 0 0;
-                        font-size: 24px;
-                    }
 
-                    .table-title .btn {
-                        color: #566787;
-                        float: right;
-                        font-size: 13px;
-                        background: #fff;
-                        border: none;
-                        min-width: 50px;
-                        border-radius: 2px;
-                        border: none;
-                        outline: none !important;
-                        margin-left: 10px;
-                    }
 
-                    .table-title .btn:hover,
-                    .table-title .btn:focus {
-                        color: #566787;
-                        background: #f2f2f2;
-                    }
+                margin-top: 50px;
+                gap: 1rem;
+                margin-left: 30px;
+                padding-right: 20px
+            }
 
-                    .table-title .btn i {
-                        float: left;
-                        font-size: 21px;
-                        margin-right: 5px;
-                    }
+            .card {
+                flex: 1 1 calc(33.333% - 1rem);
+                border-radius: 10px;
+                min-width: 250px;
+                box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 20px;
+            }
 
-                    .table-title .btn span {
-                        float: left;
-                        margin-top: 2px;
-                    }
+            .card-title,
+            .card-text,
+            .icon {
+                text-align: center;
+            }
 
-                    table.table tr th,
-                    table.table tr td {
-                        border-color: #e9e9e9;
-                        padding: 12px 15px;
-                        vertical-align: middle;
-                    }
+            .table-responsive {
+                margin: 30px 0;
+            }
 
-                    table.table tr th:first-child {
-                        width: 60px;
-                    }
+            .table-wrapper {
+                background: #fff;
+                padding: 20px 25px;
+                border-radius: 3px;
+                min-width: 1000px;
+                box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.378), 10px 10px 15px #0000002d;
+            }
 
-                    table.table tr th:last-child {
-                        width: 100px;
-                    }
+            .table-title {
+                padding-bottom: 15px;
+                background: #435d7d;
+                color: #fff;
+                padding: 16px 30px;
+                min-width: 100%;
+                margin: -20px -25px 10px;
+                border-radius: 3px 3px 0 0;
+            }
 
-                    table.table-striped tbody tr:nth-of-type(odd) {
-                        background-color: #fcfcfc;
-                    }
+            .table-title h2 {
+                margin: 5px 0 0;
+                font-size: 24px;
+            }
 
-                    table.table-striped.table-hover tbody tr:hover {
-                        background: #f5f5f5;
-                    }
+            .table-title .btn-group {
+                float: right;
+            }
 
-                    table.table th i {
-                        font-size: 13px;
-                        margin: 0 5px;
-                        cursor: pointer;
-                    }
+            .table-title .btn {
+                color: #fff;
+                float: right;
+                font-size: 13px;
+                border: none;
+                min-width: 50px;
+                border-radius: 2px;
+                border: none;
+                outline: none !important;
+                margin-left: 10px;
+            }
 
-                    table.table td:last-child i {
-                        opacity: 0.9;
-                        font-size: 22px;
-                        margin: 0 5px;
-                    }
+            .table-title .btn i {
+                float: left;
+                font-size: 21px;
+                margin-right: 5px;
+            }
 
-                    table.table td a {
-                        font-weight: bold;
-                        color: #566787;
-                        display: inline-block;
-                        text-decoration: none;
-                    }
+            .table-title .btn span {
+                float: left;
+                margin-top: 2px;
+            }
 
-                    table.table td a:hover {
-                        color: #2196F3;
-                    }
+            table.table tr th,
+            table.table tr td {
+                border-color: #e9e9e9;
+                padding: 12px 15px;
+                vertical-align: middle;
+            }
 
-                    table.table td a.settings {
-                        color: #2196F3;
-                    }
+            table.table tr th:first-child {
+                width: 60px;
+            }
 
-                    table.table td a.delete {
-                        color: #F44336;
-                    }
+            table.table tr th:last-child {
+                width: 100px;
+            }
 
-                    table.table td i {
-                        font-size: 19px;
-                    }
+            table.table-striped tbody tr:nth-of-type(odd) {
+                background-color: #fcfcfc;
+            }
 
-                    table.table .avatar {
-                        border-radius: 50%;
-                        vertical-align: middle;
-                        margin-right: 10px;
-                    }
+            table.table-striped.table-hover tbody tr:hover {
+                background: #f5f5f5;
+            }
 
-                    .status {
-                        font-size: 30px;
-                        margin: 2px 2px 0 0;
-                        display: inline-block;
-                        vertical-align: middle;
-                        line-height: 10px;
-                    }
+            table.table th i {
+                font-size: 13px;
+                margin: 0 5px;
+                cursor: pointer;
+            }
 
-                    .text-success {
-                        color: #10c469;
-                    }
+            table.table td:last-child i {
+                opacity: 0.9;
+                font-size: 22px;
+                margin: 0 5px;
+            }
 
-                    .text-info {
-                        color: #62c9e8;
-                    }
+            table.table td a {
+                font-weight: bold;
+                color: #566787;
+                display: inline-block;
+                text-decoration: none;
+                outline: none !important;
+            }
 
-                    .text-warning {
-                        color: #FFC107;
-                    }
+            table.table td a:hover {
+                color: #2196F3;
+            }
 
-                    .text-danger {
-                        color: #ff5b5b;
-                    }
+            table.table td a.edit {
+                color: #FFC107;
+            }
 
-                    .pagination {
-                        float: right;
-                        margin: 0 0 5px;
-                    }
+            table.table td a.delete {
+                color: #F44336;
+            }
 
-                    .pagination li a {
-                        border: none;
-                        font-size: 13px;
-                        min-width: 30px;
-                        min-height: 30px;
-                        color: #999;
-                        margin: 0 2px;
-                        line-height: 30px;
-                        border-radius: 2px !important;
-                        text-align: center;
-                        padding: 0 6px;
-                    }
+            table.table td i {
+                font-size: 19px;
+            }
 
-                    .pagination li a:hover {
-                        color: #666;
-                    }
+            table.table .avatar {
+                border-radius: 50%;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
 
-                    .pagination li.active a,
-                    .pagination li.active a.page-link {
-                        background: #03A9F4;
-                    }
+            .pagination {
+                float: right;
+                margin: 0 0 5px;
+            }
 
-                    .pagination li.active a:hover {
-                        background: #0397d6;
-                    }
+            .pagination li a {
+                border: none;
+                font-size: 13px;
+                min-width: 30px;
+                min-height: 30px;
+                color: #999;
+                margin: 0 2px;
+                line-height: 30px;
+                border-radius: 2px !important;
+                text-align: center;
+                padding: 0 6px;
+            }
 
-                    .pagination li.disabled i {
-                        color: #ccc;
-                    }
+            .pagination li a:hover {
+                color: #666;
+            }
 
-                    .pagination li i {
-                        font-size: 16px;
-                        padding-top: 6px
-                    }
+            .pagination li.active a,
+            .pagination li.active a.page-link {
+                background: #03A9F4;
+            }
 
-                    .hint-text {
-                        float: left;
-                        margin-top: 10px;
-                        font-size: 13px;
-                    }
-                </style>
-                <script>
-                    $(document).ready(function() {
-                        $('[data-toggle="tooltip"]').tooltip();
-                    });
-                </script>
-            </head>
+            .pagination li.active a:hover {
+                background: #0397d6;
+            }
 
-            <body>
-                <div class="container-xl">
-                    <div class="table-responsive">
-                        <div class="table-wrapper">
-                            <div class="table-title">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <h2>Data Ustaz</b></h2>
-                                    </div>
-                                    <div class="col-sm-7">
-                                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE147;</i>
-                                            <span>Add New User</span></a>
-                                        <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i>
-                                            <span>Export to Excel</span></a>
-                                    </div>
-                                </div>
+            .pagination li.disabled i {
+                color: #ccc;
+            }
+
+            .pagination li i {
+                font-size: 16px;
+                padding-top: 6px
+            }
+
+            .hint-text {
+                float: left;
+                margin-top: 10px;
+                font-size: 13px;
+            }
+
+            /* Custom checkbox */
+            .custom-checkbox {
+                position: relative;
+            }
+
+            .custom-checkbox input[type="checkbox"] {
+                opacity: 0;
+                position: absolute;
+                margin: 5px 0 0 3px;
+                z-index: 9;
+            }
+
+            .custom-checkbox label:before {
+                width: 18px;
+                height: 18px;
+            }
+
+            .custom-checkbox label:before {
+                content: '';
+                margin-right: 10px;
+                display: inline-block;
+                vertical-align: text-top;
+                background: white;
+                border: 1px solid #bbb;
+                border-radius: 2px;
+                box-sizing: border-box;
+                z-index: 2;
+            }
+
+            .custom-checkbox input[type="checkbox"]:checked+label:after {
+                content: '';
+                position: absolute;
+                left: 6px;
+                top: 3px;
+                width: 6px;
+                height: 11px;
+                border: solid #000;
+                border-width: 0 3px 3px 0;
+                transform: inherit;
+                z-index: 3;
+                transform: rotateZ(45deg);
+            }
+
+            .custom-checkbox input[type="checkbox"]:checked+label:before {
+                border-color: #03A9F4;
+                background: #03A9F4;
+            }
+
+            .custom-checkbox input[type="checkbox"]:checked+label:after {
+                border-color: #fff;
+            }
+
+            .custom-checkbox input[type="checkbox"]:disabled+label:before {
+                color: #b8b8b8;
+                cursor: auto;
+                box-shadow: none;
+                background: #ddd;
+            }
+
+            /* Modal styles */
+            .modal .modal-dialog {
+                max-width: 400px;
+            }
+
+            .modal .modal-header,
+            .modal .modal-body,
+            .modal .modal-footer {
+                padding: 20px 30px;
+            }
+
+            .modal .modal-content {
+                border-radius: 3px;
+                font-size: 14px;
+            }
+
+            .modal .modal-footer {
+                background: #ecf0f1;
+                border-radius: 0 0 3px 3px;
+            }
+
+            .modal .modal-title {
+                display: inline-block;
+            }
+
+            .modal .form-control {
+                border-radius: 2px;
+                box-shadow: none;
+                border-color: #dddddd;
+            }
+
+            .modal textarea.form-control {
+                resize: vertical;
+            }
+
+            .modal .btn {
+                border-radius: 2px;
+                min-width: 100px;
+            }
+
+            .modal form label {
+                font-weight: normal;
+            }
+        </style>
+        <script>
+            $(document).ready(function() {
+                // Activate tooltip
+                $('[data-toggle="tooltip"]').tooltip();
+
+                // Select/Deselect checkboxes
+                var checkbox = $('table tbody input[type="checkbox"]');
+                $("#selectAll").click(function() {
+                    if (this.checked) {
+                        checkbox.each(function() {
+                            this.checked = true;
+                        });
+                    } else {
+                        checkbox.each(function() {
+                            this.checked = false;
+                        });
+                    }
+                });
+                checkbox.click(function() {
+                    if (!this.checked) {
+                        $("#selectAll").prop("checked", false);
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+
+        <div class="container-xl">
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2>Data <b>Ustaz</b></h2>
                             </div>
-                            <table class="table table-striped table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nama</th>
-                                        <th>Tanggal Dibuat</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><a href="#"><img src="/examples/images/avatar/1.jpg" class="avatar"
-                                                    alt="Avatar"> Michael Holz</a></td>
-                                        <td>04/10/2013</td>
-                                        <td>Admin</td>
-                                        <td><span class="status text-success">&bull;</span> Active</td>
-                                        <td>
-                                            <a href="#" class="settings" title="Settings" data-toggle="tooltip"><i
-                                                    class="material-icons">&#xE8B8;</i></a>
-                                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                                                    class="material-icons">&#xE5C9;</i></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="clearfix">
-                                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                                <ul class="pagination">
-                                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                                </ul>
+                            <div class="col-sm-6">
+                                <a href="#tambahUstazModal" class="btn btn-primary" data-toggle="modal"><i
+                                        class="material-icons">&#xE147;</i> <span>Tambah Ustaz Baru</span></a>
+                                <a href="#deleteUstazModal" class="btn btn-danger" data-toggle="modal"><i
+                                        class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                                <a href="#recoverustazModal" class="btn btn-success" data-toggle="modal">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        viewBox="0 0 24 24">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2"
+                                            d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
+                                    </svg>
+                                    <span>Recover</span></a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </body>
-            <div class="modal fade " id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="uploadModalLabel">Video baru</h1>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="title-name" class="col-form-label">Judul :</label>
-                                    <input type="text" class="form-control" id="title-name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="deskripsi-text" class="col-form-label">Deskripsi :</label>
-                                    <textarea class="form-control" id="deskripsi-text"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Link Youtube:</label>
-                                    <input type="text" class="form-control" id="link">
-                                </div>
-                                <div class="media">
-                                    <!-- Input file disembunyikan dengan multiple -->
-                                    <P><b>Pilih Thumbnail</b></P>
-                                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
-                                        style="display: none;" multiple />
-                                    <!-- Ikon pengganti yang akan ditampilkan -->
-                                    <button id="uploadButton" class="icon-button" type="button" aria-label="Upload Images">
-                                        <!-- Tambahkan ikon Tabler di sini -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                            viewBox="0 0 24 24">
-                                            <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                                stroke-linejoin="round" stroke-width="2">
-                                                <path
-                                                    d="M15 8h.01M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z" />
-                                                <path d="m3 16l5-5c.928-.893 2.072-.893 3 0l5 5" />
-                                                <path d="m14 14l1-1c.928-.893 2.072-.893 3 0l3 3" />
-                                            </g>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Tempat untuk menampilkan pratinjau gambar -->
-                                <div id="preview" class="image-preview"></div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                            <button type="button" class="btn btn-primary">Upload</button>
-                        </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span class="custom-checkbox">
+                                        <input type="checkbox" id="selectAll">
+                                        <label for="selectAll"></label>
+                                    </span>
+                                </th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>No. Hp</th>
+                                <th>Email</th>
+                                <th>Username</th>
+                                <th>Kategori</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="custom-checkbox">
+                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                        <label for="checkbox1"></label>
+                                    </span>
+                                </td>
+                                <td>Gustavo Fring</td>
+                                <td>Bandung</td>
+                                <td>081337961020</td>
+                                {{-- <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                                        data-cfemail="36425e595b57455e5744524f765b575f5a1855595b">[email&#160;protected]</a>
+                                </td> --}}
+                                <td>gustavo@gmail.com</td>
+                                <td>gustavo12</td>
+                                <td>Sholat</td>
+                                <td>
+                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i
+                                            class="material-icons" title="Edit">&#xE254;</i></a>
+                                    <a href="#deleteUstazModal" class="delete" data-toggle="modal"><i
+                                            class="material-icons" title="Delete">&#xE872;</i></a>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="clearfix">
+                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a href="#">Previous</a></li>
+                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!-- Edit Modal HTML -->
+        <div id="tambahUstazModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Tambah Ustaz</h4>
+                            <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Nama</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>No. Hp</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input class="form-control" required></input>
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input class="form-control" required></input>
+                            </div>
+                            <div class="form-group">
+                                <label>Kategori</label>
+                                <select class="form-control" required>
+                                    <option value="">Pilih/option>
+                                    <option value="ustaz">Sholat</option>
+                                    <option value="murid">Zakat</option>
+                                    <option value="murid">Nikah</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-success" value="Add">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Edit Modal HTML -->
+        <div id="editEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Ustaz</h4>
+                            <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea class="form-control" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-info" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Delete Modal HTML -->
+        <div id="deleteUstazModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Delete Ustaz</h4>
+                            <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Yakin ingin menghapus Ustaz</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal recover -->
+        <div class="modal fade" id="recoverustazModal" tabindex="-1" aria-labelledby="recoverustazModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content" style="width: 1000px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="recoverustazModalLabel">Recover Ustaz</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Tabel Manage Employees -->
+                        <div class="container-xl">
+                            <div class="table-responsive">
+                                <div class="table-wrapper">
+                                    <div class="table-title">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <a href="#restoreUstaztModal" class="btn btn-success"
+                                                    data-toggle="modal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24">
+                                                        <g fill="none" stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2">
+                                                            <path d="M3.06 13a9 9 0 1 0 .49-4.087" />
+                                                            <path d="M3 4.001v5h5M11 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0" />
+                                                        </g>
+                                                    </svg><span>Recover</span></a>
+                                                <a href="#deletPermanentModal" class="btn btn-danger"
+                                                    data-toggle="modal">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                        viewBox="0 0 24 24">
+                                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                                            stroke-linejoin="round" stroke-width="2"
+                                                            d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
+                                                    </svg>
+                                                    <span>Delete</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table class="table table-striped table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="selectAll">
+                                                        <label for="selectAll"></label>
+                                                    </span>
+                                                </th>
+                                                <th>Nama</th>
+                                                <th>Alamat</th>
+                                <th>No. Hp</th>
+                                <th>Email</th>
+                                <th>Username</th>
+                                <th>Kategori</th>
+                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="custom-checkbox">
+                                                        <input type="checkbox" id="checkbox1" name="options[]"
+                                                            value="1">
+                                                        <label for="checkbox1"></label>
+                                                    </span>
+                                                </td>
+                                                <td>Lalo Salamanca</td>
+                                                <td>Jepara</td>
+                                                <td>08997890728</td>
+                                                <td>gustavo@hotmail.com</td>
+                                                <td>laloslamanca</td>
+                                                <td>Sholat</td>
+                                                <td>
+                                                    <a href="#restoreUstaztModal" class="edit" data-toggle="modal">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14"
+                                                            height="14" viewBox="0 0 24 24">
+                                                            <g fill="none" stroke="currentColor"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2">
+                                                                <path d="M3.06 13a9 9 0 1 0 .49-4.087" />
+                                                                <path d="M3 4.001v5h5M11 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0" />
+                                                            </g>
+                                                        </svg></a>
+                                                    <a href="#deletPermanentModal" class="delete" data-toggle="modal">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14"
+                                                            height="14" viewBox="0 0 24 24">
+                                                            <path fill="none" stroke="currentColor"
+                                                                stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M4 7h16m-10 4v6m4-6v6M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-12M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
+                                                        </svg></a>
+                                                </td>
+                                            </tr>
+
+                                            <!-- Tambahkan lebih banyak data karyawan di sini jika diperlukan -->
+                                        </tbody>
+                                    </table>
+                                    <div class="clearfix">
+                                        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                                        <ul class="pagination">
+                                            <li class="page-item disabled"><a href="#">Previous</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                                            <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Akhir dari Tabel Manage Employees -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="deletPermanentModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Delete Ustaz</h4>
+                            <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Yakin ingin menghapus permanen Ustaz?/p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="restoreUstaztModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Recover Ustaz</h4>
+                            <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Yakin ingin recover Ustaz?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-success" value="Recover">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    </body>
+
+    </html>
 @stop

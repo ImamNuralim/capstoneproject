@@ -14,6 +14,11 @@ use App\Http\Controllers\UstazController;
 use App\Http\Controllers\LiveChatController;
 use App\Http\Controllers\AnswerStoreController;
 use App\Http\Controllers\NotifikasiController;
+use App\Http\Controllers\MuridController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ReportController;
 
 
 
@@ -64,12 +69,26 @@ Route::any('/videos/edit/{id}','VideoController@edit')->name('video.edit');
 Route::any('/videos/destroy/{id}','VideoController@destroy')->name('video.destroy');
 Route::any('/videos/update/{id}','VideoController@update')->name('video.update');
 
-//dashboard admin
+//dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.dashboard');
 
 //ustaz
+Route::get('/dashboard/ustaz', [UstazController::class, 'index'])->name('dashboard.ustaz.index');
 
-Route::get('/dashboard/ustaz', [UstazController::class, 'index'])->name('dashboard.ustaz');
+//murid
+Route::get('/dashboard/murid', [MuridController::class, 'index'])->name('dashboard.murid.index');
+
+//admin
+Route::get('/dashboard/admin', [AdminController::class, 'index'])->name('dashboard.admin.index');
+
+//post
+Route::get('/dashboard/post', [PostController::class, 'index'])->name('dashboard.post.index');
+
+//kategori
+Route::get('/dashboard/kategori', [KategoriController::class, 'index'])->name('dashboard.kategori.index');
+
+//report
+Route::get('/dashboard/report', [ReportController::class, 'index'])->name('dashboard.report.index');
 
 //profil
 Route::get('/profile', [ProfileController::class, 'index'])->name('userprofile.index');

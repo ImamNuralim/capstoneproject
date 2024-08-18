@@ -6,5 +6,7 @@ use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
-    //
+    public function index(){
+        return view('dashboard.kategori.index');
+    }
 }

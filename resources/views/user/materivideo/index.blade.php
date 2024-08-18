@@ -109,7 +109,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Data karyawan -->
                                             <tr>
                                                 <td>
                                                     <span class="custom-checkbox">

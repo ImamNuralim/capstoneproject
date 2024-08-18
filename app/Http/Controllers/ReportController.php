@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MuridController extends Controller
+class ReportController extends Controller
 {
     public function index(){
-        return view('dashboard.murid.index');
+        return view('dashboard.report.index');
     }
 }
