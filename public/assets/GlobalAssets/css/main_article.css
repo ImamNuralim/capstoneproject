@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap');
+
+.pattern {
+    height: 100%;
+    background-image: url("/GlobalAssets/imgd/background/main_background.png");
+    background-repeat: repeat;
+    background-position: top center;
+    background-size: contain;
+}
+
+.back_colour {
+    background-color: #d9d9d9 !important;
+}
+
+/* SANAD */
+.sanad_main::before {
+    content: "";
+    background-color: #dcdcdc;
+    background: url('/GlobalAssets/imgd/background/main_article_background.png'), #d9d9d9 -2383.5px 0px / 395.498% 100% no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+    border-bottom-left-radius: var(--bs-border-radius) !important;
+    border-top-left-radius: var(--bs-border-radius) !important;
+}
+
+.sanad_main {
+    position: relative;
+}
+
+.sanad_main>div {
+    position: relative;
+}
+
+.sanad_main h1,
+.sanad_main h2,
+.sanad_main h3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+#sanad p.content {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+#sanad p.content-arab {
+    direction: rtl;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    line-height: 1.85;
+    text-align: justify;
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+#sanad li.content {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+#sanad .content-list-level-ul {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    list-style-type: upper-latin;
+    font-weight: bold;
+}
+
+#sanad .content-list-level-dec {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    list-style-type: decimal;
+}
+
+#sanad .content-list-level-decarab {
+    direction: rtl;
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    list-style-type: decimal;
+}
+
+#sanad .content-list-level-cir {
+    list-style-type: disc;
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+#sanad .content-list-level-ll {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    list-style-type: lower-latin;
+    font-weight: bold;
+}
+
+#sanad .content-list-level-ll-normal {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    list-style-type: lower-latin;
+    font-weight: normal;
+}
+
+#sanad .nk {
+    counter-reset: item;
+}
+
+#sanad .content-list-level-nk {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    list-style-type: decimal;
+    font-weight: normal;
+    display: block;
+}
+
+#sanad .content-list-level-nk::before {
+    content: counter(item) ") ";
+    counter-increment: item;
+}
+
+.subtitle {
+    margin-left: calc((var(--bs-gutter-x) * -.5) - 1.5rem);
+    background-color: #2A6D63;
+    width: min-content;
+    color: white;
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+#sanad a.subtitle:hover{
+    color: #2A6D63;
+    background-color: white;
+    transition: 0.3s;
+}
+
+#sanad a.subtitle.active{
+    color: #2A6D63;
+    background-color: white;
+    transition: 0.3s;
+}
+
+#sanad a.subtitle{
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+    .subtitle {
+        margin-left: calc((var(--bs-gutter-x) * -.5) - 3rem);
+    }
+}
+
+/* Circle Penunjuk Halaman */
+#indikator_halaman a {
+    text-decoration: none;
+}
+
+.circle {
+    background-color: white;
+    margin: 5px;
+    font-family: 'Nunito Sans', 'K2D';
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #20665C;
+    width: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 50%;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.circle:hover,
+.circle.active {
+    color: white;
+    background-color: #20665C;
+}

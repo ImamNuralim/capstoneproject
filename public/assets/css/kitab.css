@@ -1,0 +1,118 @@
+/* Mengatur gaya umum untuk body */
+body.pattern {
+    background-color: #c5c5c5;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Mengatur gaya untuk container */
+.container-md {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mengatur gaya untuk judul utama */
+#judul {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Mengatur gaya untuk paragraf dengan kelas 'content' */
+p.content {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Mengatur gaya untuk paragraf dengan kelas 'content-arab' */
+p.content-arab {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: right;
+    font-family: 'Amiri', serif;
+    margin-bottom: 15px;
+    background-color: #d2d2d2  ;
+    border-radius: 8px;
+    padding-right: 9px;
+}
+
+/* Mengatur gaya untuk paragraf yang berisi terjemahan */
+p.content.fst-italic {
+    font-style: italic;
+    color: #777;
+    font-size: 1rem;
+}
+
+/* Mengatur gaya untuk subtitle */
+.subtitle {
+    background-color: #eee;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Mengatur gaya untuk daftar */
+ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Mengatur gaya untuk item di dalam daftar */
+ol .content {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Mengatur gaya untuk bagian dengan id 'main_article' */
+#main_article {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Mengatur gaya untuk shadow pada bagian row */
+.row.shadow {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Mengatur gaya untuk text dalam elemen yang memiliki tag <span> */
+.fst-italic {
+    font-style: italic;
+    color: #333;
+}
+
+/* Gaya untuk kolom di dalam main article */
+.col-md-8 {
+    padding: 15px;
+}
+
+/* Mengatur gaya untuk elemen dengan background pattern */
+body.pattern {
+    background-image: url('../images/pattern.png');
+    background-repeat: repeat;
+}
+
+/* Gaya untuk media query (responsif) */
+@media (max-width: 768px) {
+    #judul {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.25rem;
+    }
+
+    p.content {
+        font-size: 0.9rem;
+    }
+}

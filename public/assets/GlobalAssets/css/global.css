@@ -1,0 +1,16 @@
+@import "https://fonts.googleapis.com/css?family=Lato:300,400";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+.revert_container {
+  margin-left: calc(var(--bs-gutter-x) * -.5);
+  margin-right: calc(var(--bs-gutter-x) * -.5);
+}
+.revert_margin {
+  margin-top: -3rem;
+}

@@ -54,6 +54,15 @@ Route::get('/materivideo', [MateriVideoController::class, 'index'])->name('mater
 Route::get('/kitab', [KitabController::class, 'index'])->name('kitab.index');
 Route::get('/surah', [QuranController::class, 'quran'])->name('kitab.surah');
 Route::get('/hadith', [HadithController::class, 'hadith'])->name('hadith');
+Route::get('/musthalah-al-hadits', function () { return view('user.kitab.musthalah-al-hadits'); })->name('user.kitab.musthalah-al-hadits');
+Route::get('/sanad-dan-matan', function () {
+    return view('user.kitab.sanad-dan-matan');
+})->name('user.kitab.sanad-dan-matan');
+Route::get('/user/kitab/klasifikasi', function () {
+    return view('user.kitab.klasifikasi');
+})->name('user.kitab.klasifikasi');
+
+
 
 // Route::get('surah', [QuranController::class, 'quran'])->name('surah');
 Route::get('/dashboard', function(){
