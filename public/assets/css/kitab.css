@@ -4,28 +4,72 @@ body.pattern {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.499), rgba(255, 255, 255, 0.5)),
+                      url('/img/background.png');
+    background-repeat: repeat;
 }
-
+.content-list-level-ul{
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1rem;
+}
+.content-list-level-dec{
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1rem;
+}
+.content-list-level-ll {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    list-style-type: lower-latin;
+    font-weight: bold;
+}
+.content-list-level-ll-normal {
+    font-family: 'K2D', sans-serif;
+    text-align: justify;
+    font-size: 1rem;
+    list-style-type: lower-latin;
+    font-weight: normal;
+}
 /* Mengatur gaya untuk container */
-.container-md {
-    max-width: 960px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.containerr{
+
+    margin-top: 30px;
+
+}
+.circle{
+    background-color: white;
+margin: 5px;
+font-family: 'Nunito Sans', 'K2D';
+font-size: 1.5rem;
+font-weight: 800;
+color: #099dec;
+width: 2.5rem;
+line-height: 2.5rem;
+border-radius: 50%;
+transition: 0.3s;
+text-align: center;
+}
+.circle:hover,
+.circle.active {
+color: white;
+background-color: #0ca6ff;
 }
 
 /* Mengatur gaya untuk judul utama */
 #judul {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Sedan', sans-serif;
 }
 
 /* Mengatur gaya untuk paragraf dengan kelas 'content' */
 p.content {
+    text-align: justify;
     margin-bottom: 15px;
     font-size: 1rem;
     color: #555;
@@ -36,18 +80,19 @@ p.content-arab {
     font-size: 1.5rem;
     color: #333;
     text-align: right;
-    font-family: 'Amiri', serif;
+    font-family:  'K2D', sans-serif;
     margin-bottom: 15px;
-    background-color: #d2d2d2  ;
+    background-color: #d4d4d4;
     border-radius: 8px;
     padding-right: 9px;
 }
 
 /* Mengatur gaya untuk paragraf yang berisi terjemahan */
 p.content.fst-italic {
-    font-style: italic;
+    font-style: 'K2D', sans-serif;
     color: #777;
     font-size: 1rem;
+    text-align: justify;
 }
 
 /* Mengatur gaya untuk subtitle */
@@ -62,22 +107,27 @@ p.content.fst-italic {
 
 /* Mengatur gaya untuk daftar */
 ol {
-    margin-left: 20px;
-    margin-bottom: 20px;
+
+
 }
 
 /* Mengatur gaya untuk item di dalam daftar */
 ol .content {
+    text-align: justify;
     margin-bottom: 10px;
     font-size: 1rem;
     color: #555;
+    font-style: 'K2D', sans-serif;
 }
 
 /* Mengatur gaya untuk bagian dengan id 'main_article' */
 #main_article {
-    background-color: #fff;
+    max-width: 60%;
+    margin: 20px auto;
     padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Mengatur gaya untuk shadow pada bagian row */
@@ -94,12 +144,6 @@ ol .content {
 /* Gaya untuk kolom di dalam main article */
 .col-md-8 {
     padding: 15px;
-}
-
-/* Mengatur gaya untuk elemen dengan background pattern */
-body.pattern {
-    background-image: url('../images/pattern.png');
-    background-repeat: repeat;
 }
 
 /* Gaya untuk media query (responsif) */

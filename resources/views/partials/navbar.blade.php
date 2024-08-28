@@ -12,11 +12,12 @@
     <link
         rel="stylesheet"href="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css') }}">
     <link href="{{ asset('assets/css/navbar.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/navbar.css">
+
+    @stack('styles')
 </head>
 
 <body>
-    <div class="page">
+    <div class="">
         <header class="navbar navbar-expand-md navbar-light sticky-top d-print-none">
             <div class="container">
                 <h1 class="navbar-brand text-info navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
@@ -165,8 +166,6 @@
                 </div>
             </div>
         </header>
-
-        <div class="page-wrapper">
             <div class="container">
                 @yield('dashboard')
                 @yield('home')
@@ -179,8 +178,8 @@
                 @yield('detail')
                 @yield('notifikasi')
                 @yield('profile')
+
             </div>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>

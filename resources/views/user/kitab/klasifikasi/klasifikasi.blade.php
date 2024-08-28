@@ -1,3 +1,4 @@
+@include('partials.navbar')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,24 +6,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klasifikasi Hadits | ElHadith</title>
+    <title>Mushthalah al-Hadits | ElHadith</title>
+
+    <!-- Link CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/klasifikasi.css') }}">
-    <script src="../GlobalAssets/vendor/jquery/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="../GlobalAssets/js/load_vendor.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedan:ital@0;1&display=swap" rel="stylesheet">
+
 
 </head>
 
 <body class="pattern">
-    <div class="container-md">
-        <section id="header">
-            <script>$("#header").load("../GlobalAssets/html/header.html")</script>
-        </section>
-        <section id="sanad" style="margin-top: 7.2rem;">
-            <div class="row shadow">
+    @include('user.kitab.shortcut')
                 <div id="main_article" class="col-md-8 col-sm-12 col-xs-12 rounded-start sanad_main">
-                    <div class="min-vh-100 mt-md-5 px-md-5 mt-4 px-4 text-center text-wrap">
-                        <h2 id="judul" class="text-capitalize my-2">Klasifikasi Hadits</h2>
+                    <h2 id="judul" class="text-capitalize my-2">Klasifikasi Hadits</h2>
                         <p class="content">
                             Hadits dapat diklasifikasikan berdasarkan beberapa kriteria yakni berdasarkan asal ujung
                             sanad, keutuhan rantai sanad, banyak periwayat serta tingkat keaslian hadits (dapat diterima
@@ -35,7 +33,7 @@
                             <h3 class="m-0 py-1">Berdasarkan Kuantitas Sanad</h3>
                         </div>
                         <ol>
-                            <li class="content-list-level-ul fw-bold">
+                            <li class="content-list-level-ul">
                                 Hadits Mutawatir
                                 <ol>
                                     <li class="content-list-level-dec">
@@ -242,7 +240,7 @@
                                     </li>
                                 </ol>
                             </li>
-                            <li class="content-list-level-dec fw-bold">
+                            <li class="content-list-level-dec">
                                 Hadis Ahad
                                 <ol>
                                     <li class="content-list-level-dec">
@@ -359,49 +357,36 @@
                                 </ol>
                             </li>
                         </ol>
-                        <div class="my-4 px-5 py-1 text-nowrap text-start subtitle">
-                            <h3 class="m-0 py-1">Berdasarkan Kualitas Sanad</h3>
-                        </div>
-                        <p class="content fw-bold">
-                            Lanjut? Klik <span><a href="/Klasifikasi/page/2/">Disini</a></span>
-                        </p>
-                        <div class="w-100" style="height: 25rem;">
+
+                        <div class="w-100" style="height: 10rem;">
                             <div id="indikator_halaman" class="d-flex justify-content-center">
-                                <a href="/Klasifikasi/">
-                                    <div class="circle active">
+                                <a href="{{ route('user.kitab.klasifikasi.klasifikasi') }}">
+                                    <div class="circle {{ request()->is('user/kitab/klasifikasi/klasifikasi') ? 'active' : '' }}">
                                         1
                                     </div>
                                 </a>
-                                <a href="/Klasifikasi/page/2/">
-                                    <div class="circle">
+                                <a href="{{ route('user.kitab.klasifikasi.klasifikasi2') }}">
+                                    <div class="circle {{ request()->is('user/kitab/klasifikasi/klasifikasi2') ? 'active' : '' }}">
                                         2
                                     </div>
                                 </a>
-                                <a href="/Klasifikasi/page/3/">
-                                    <div class="circle">
+                                <a href="{{ route('user.kitab.klasifikasi.klasifikasi3') }}">
+                                    <div class="circle {{ request()->is('user/kitab/klasifikasi/klasifikasi3') ? 'active' : '' }}">
                                         3
                                     </div>
                                 </a>
-                                <a href="/Klasifikasi/page/4/">
-                                    <div class="circle">
+                                <a href="{{ route('user.kitab.klasifikasi.klasifikasi4') }}">
+                                    <div class="circle {{ request()->is('user/kitab/klasifikasi/klasifikasi4') ? 'active' : '' }}">
                                         4
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div id="sidebar" class="">
-                    <script>$("#sidebar").load("../GlobalAssets/html/sidebar.html");</script>
-                    <script>$('#sidebar').addClass("col-md-4 col-sm-12 col-xs-12 rounded-end sidebar")</script>
-                </div>
-            </div>
-        </section>
-        <section id="footer">
-            <script>$("#footer").load("../GlobalAssets/html/footer.html");</script>
-        </section>
-    </div>
+
+
+
 </body>
 
 </html>

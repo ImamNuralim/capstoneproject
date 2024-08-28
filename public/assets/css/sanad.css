@@ -20,7 +20,7 @@ body.pattern {
 
 /* Mengatur gaya untuk judul utama */
 #judul {
-    font-size: 2rem;
+    font-size: 3rem;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
@@ -29,14 +29,15 @@ body.pattern {
 
 /* Mengatur gaya untuk paragraf dengan kelas 'content' */
 p.content {
+    text-align: justify;
     margin-bottom: 15px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #555;
 }
 
 /* Mengatur gaya untuk paragraf dengan kelas 'content-arab' */
 p.content-arab {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #333;
     text-align: right;
     font-family: 'Amiri', serif;
@@ -48,9 +49,10 @@ p.content-arab {
 
 /* Mengatur gaya untuk paragraf yang berisi terjemahan */
 p.content.fst-italic {
-    font-style: italic;
+    text-align: justify;
+    font-style: 'K2D', sans-serif;
     color: #777;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 /* Mengatur gaya untuk subtitle */
@@ -71,6 +73,7 @@ ol {
 
 /* Mengatur gaya untuk item di dalam daftar */
 ol .content {
+    text-align: justify;
     margin-bottom: 10px;
     font-size: 1rem;
     color: #555;
@@ -78,6 +81,7 @@ ol .content {
 
 /* Mengatur gaya untuk bagian dengan id 'main_article' */
 #main_article {
+    max-width: 60%;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -110,6 +114,7 @@ ol .content {
     }
 
     p.content {
+        text-align: justify;
         font-size: 0.9rem;
     }
 }
