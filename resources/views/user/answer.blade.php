@@ -140,20 +140,22 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body text-center">
+                                    <div class="modal-body text-center d-flex justify-content-center align-items-center" style="gap: 10px;">
                                         <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com"
-                                            target="_blank" class="btn btn-primary mx-2">
+                                            target="_blank" class="btn btn-primary">
                                             Facebook
                                         </a>
                                         <a href="https://twitter.com/intent/tweet?url=https://example.com&text=Check%20this%20out!"
-                                            target="_blank" class="btn btn-info mx-2">
+                                            target="_blank" class="btn btn-info">
                                             Twitter
                                         </a>
                                         <a href="https://api.whatsapp.com/send?text=https://example.com"
-                                            target="_blank" class="btn btn-success mx-2">
+                                            target="_blank" class="btn btn-success">
                                             WhatsApp
                                         </a>
                                     </div>
+
+
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Tutup</button>
@@ -429,7 +431,7 @@
                                     </svg>
                                     Delete</a>
 
-                                <a class="dropdown-item" href="#">
+                                {{-- <a class="dropdown-item" href="#">
                                     <button>
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="me-2 icon icon-tabler icon-tabler-alert-circle" width="24"
@@ -443,7 +445,7 @@
                                         </svg>
                                     </button>
 
-                                    Report</a>
+                                    Report</a> --}}
                             </div>
                         </div>
                     </div>

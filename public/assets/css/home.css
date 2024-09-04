@@ -51,15 +51,23 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.kategori1 {
-    width: 100%; /* Kontainer mengambil lebar penuh modal */
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    display: flex; /* Menggunakan flexbox untuk tata letak */
-    justify-content: flex-start; /* Pastikan elemen drop-down berada di sebelah kiri */
-    align-items: center; /* Tengah vertikal jika diperlukan */
+.kategori-container {
+    display: flex; /* Menggunakan Flexbox untuk tata letak horizontal */
+    justify-content: space-between; /* Menyebarkan elemen ke kiri dan kanan */
+    gap: 20px; /* Menambahkan jarak antar elemen */
+    margin: 20px 0; /* Menambahkan margin atas dan bawah */
 }
+
+.kategori1, .kategori2 {
+    flex: 1; /* Membuat kedua elemen memiliki lebar yang sama */
+    min-width: 200px; /* Menentukan lebar minimum untuk elemen */
+}
+
+.drop-down select {
+    width: 100%; /* Mengatur lebar elemen select agar penuh */
+    padding: 5px; /* Menambahkan padding untuk kenyamanan tampilan */
+}
+
 
 .drop-down {
     box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.211), 10px 10px 15px #0000001e;

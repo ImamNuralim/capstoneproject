@@ -27,6 +27,14 @@
     padding: 0;
     position: relative;
 }
+.modal-body.text-center {
+    display: flex !important;
+    flex-direction: row !important; /* Pastikan elemen diatur horizontal */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .modal-content {
     background-color: blur;
     border: none;

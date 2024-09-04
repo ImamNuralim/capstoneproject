@@ -143,17 +143,29 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="kategori1">
-                                    <div class="drop-down">
-                                        <select class="form-control" name="category" id="category" required>
-                                            <option value="">Pilih kategori</option>
-                                            <option value="category1">Sholat</option>
-                                            <option value="category2">Nikah</option>
-                                            <option value="category3">Puasa</option>
-                                            <option value="category4">Zakat</option>
-                                        </select>
+                                <div class="kategori-container">
+                                    <div class="kategori1">
+                                        <div class="drop-down">
+                                            <select class="form-control" name="category1" id="category1" required>
+                                                <option value="">Pilih kategori</option>
+                                                <option value="category1">Sholat</option>
+                                                <option value="category2">Nikah</option>
+                                                <option value="category3">Puasa</option>
+                                                <option value="category4">Zakat</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="kategori2">
+                                        <div class="drop-down">
+                                            <select class="form-control" name="category2" id="category2" required>
+                                                <option value="">Pilih kategori</option>
+                                                <option value="category1">Postingan</option>
+                                                <option value="category2">Pertanyaan</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <textarea class="form-control1" placeholder="Tuliskan sesuatu..." aria-label="default input example"></textarea>
                                 </div>
